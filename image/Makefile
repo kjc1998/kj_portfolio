@@ -1,7 +1,7 @@
 ENGINE := docker
 
 IMAGE_NAME := kj_portfolio
-TAG := 1.0
+TAG := 2.0
 REGISTRY := docker.io/kjchow
 IMAGE := $(REGISTRY)/$(IMAGE_NAME):$(TAG)
 IMAGE_LATEST := $(REGISTRY)/$(IMAGE_NAME):latest
