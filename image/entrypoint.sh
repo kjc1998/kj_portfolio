@@ -1,5 +1,5 @@
 #!/bin/sh
 
 ## build package and run nginx
-npm run build
+BASE_PATH=$BASE_PATH npm run build
 exec nginx -g "daemon off;"
