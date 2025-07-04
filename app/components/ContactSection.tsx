@@ -6,12 +6,9 @@ const ContactSection = () => {
 		<section className="py-20 px-4 bg-gradient-to-b from-gray-900 to-black">
 			<div className="max-w-4xl mx-auto">
 				<motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center space-y-8">
-					<h2 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-						Let&apos;s Create Amazing Mobile Experiences
-					</h2>
+					<h2 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Let&apos;s Create Amazing Mobile Experiences</h2>
 					<p className="text-gray-400 max-w-2xl mx-auto">
-						Ready to bring your mobile app idea to life? I specialize in creating polished, user-friendly mobile applications that deliver exceptional
-						experiences.
+						Ready to bring your mobile app idea to life? I specialize in creating polished, user-friendly mobile applications that deliver exceptional experiences.
 					</p>
 
 					{/* Location */}
