@@ -1,20 +1,15 @@
 pipeline {
-    agent { label 'docker' }
+    agent { 
+        docker { 
+            label 'docker'
+            image 'docker.io/node:22-bookworm' 
+        }
+    }
 
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                sh 'node --version'
             }
         }
     }
