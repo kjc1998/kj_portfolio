@@ -6,18 +6,25 @@ pipeline {
         }
     }
     stages {
-        stage('Build') {
-            environment {
-                HOME = '.'
-            }
+        stage('Validate') {
             steps {
-                sh 'npm install'
+                script {
+                    def targetBranches = ['main']
+                    def target = env.CHANGE_TARGET
+
+                    if (target != null && !targetBranches.contains(target)) {
+                        currentBuild.result = 'ABORTED'
+                        error('Abort Build')
+                    }
+                }
             }
         }
+        stage('Build') {
+            environment { HOME = '.' }
+            steps { sh 'npm install' }
+        }
         stage('Test') {
-            steps {
-                sh 'npm test'
-            }
+            steps { sh 'npm test' }
         }
     }
 }
