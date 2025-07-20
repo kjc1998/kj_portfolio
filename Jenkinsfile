@@ -5,6 +5,10 @@ pipeline {
             image 'docker.io/node:22-bookworm'
         }
     }
+    options {
+        // only keeps last 10 builds
+        buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '10', daysToKeepStr: '', numToKeepStr: '10')
+    }
     stages {
         stage('Validate') {
             steps {
