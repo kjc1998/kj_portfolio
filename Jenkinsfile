@@ -5,14 +5,13 @@ pipeline {
             image 'docker.io/node:22-bookworm'
         }
     }
-
     stages {
         stage('Build') {
+            environment {
+                HOME = '.'
+            }
             steps {
-                sh '''
-                    npm cache clean --force
-                    npm install
-                '''
+                sh 'npm install'
             }
         }
         stage('Test') {
