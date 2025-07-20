@@ -1,4 +1,4 @@
-# Kai Jie Portfolio
+# Kai Jie's Portfolio
 
 ## Prerequisite
 
