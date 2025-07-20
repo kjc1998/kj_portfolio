@@ -7,17 +7,15 @@ pipeline {
     }
     stages {
         stage('Build') {
-            environment {
-                HOME = '.'
-            }
+            environment { HOME = '.' }
+
             steps {
+                echo env.CHANGE_TARGET
                 sh 'npm install'
             }
         }
         stage('Test') {
-            steps {
-                sh 'npm test'
-            }
+            steps { sh 'npm test' }
         }
     }
 }
