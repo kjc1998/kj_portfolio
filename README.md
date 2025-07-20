@@ -83,4 +83,4 @@
     - Check image paths are correct
     - Ensure images are in the `public` directory
 
-HELLO FROM B1
+HELLO FROM B2
