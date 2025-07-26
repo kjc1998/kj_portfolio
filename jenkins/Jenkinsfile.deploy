@@ -2,7 +2,11 @@ pipeline {
     agent { label 'docker && linux && make' }
 
     parameters {
-        string(name: 'IMAGE_TAG', defaultValue: '2.1', description: 'Portfolio Image Version to Deploy')
+        string(name: 'IMAGE_TAG', description: 'Portfolio Image Version to Deploy')
+    }
+
+    environment {
+        DOCKERHUB_CRED = credentials('kj-dockerhub')
     }
 
     options { buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '10', daysToKeepStr: '', numToKeepStr: '10') }
@@ -16,18 +20,13 @@ pipeline {
             }
         }
 
-        // stage('Push Docker Image') {
-        //     steps {
-        //         sh "echo \"$DOCKERHUB_PASSWORD\" | docker login -u \"$DOCKERHUB_USERNAME\" --password-stdin"
-        //         sh "docker push $IMAGE_NAME:$IMAGE_TAG"
-        //     }
-        // }
-
-        // stage('Deploy') {
-        //     steps {
-        //         sh "./deploy.sh $IMAGE_NAME:$IMAGE_TAG"
-        //     }
-        // }
+        stage('Push Docker Image') {
+            steps {
+                dir('image') {
+                    sh "make login DOCKERHUB_USERNAME=${env.DOCKERHUB_CRED_USR} DOCKERHUB_PASSWORD=${env.DOCKERHUB_CRED_PSW}"
+                }
+            }
+        }
 
         stage('Clean Docker Image') {
             steps {
