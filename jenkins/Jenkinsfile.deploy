@@ -33,11 +33,9 @@ pipeline {
 
     post {
         always {
-            steps {
-                dir('image') {
-                    // Clean Image
-                    sh "make clean TAG=${params.IMAGE_TAG}"
-                }
+            dir('image') {
+                // Clean Image
+                sh "make clean TAG=${params.IMAGE_TAG}"
             }
         }
     }
