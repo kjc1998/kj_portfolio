@@ -24,6 +24,7 @@ pipeline {
             steps {
                 dir('image') {
                     sh "make login DOCKERHUB_USERNAME=${env.DOCKERHUB_CRED_USR} DOCKERHUB_PASSWORD=${env.DOCKERHUB_CRED_PSW}"
+                    sh "make push TAG=${params.IMAGE_TAG}"
                 }
             }
         }
