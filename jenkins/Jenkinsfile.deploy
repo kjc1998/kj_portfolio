@@ -2,7 +2,7 @@ pipeline {
     agent { label 'docker && linux && make' }
 
     parameters {
-        string(name: 'IMAGE_TAG', description: 'Portfolio Image Version to Deploy')
+        string(name: 'IMAGE_TAG', defaultValue: '2.1', description: 'Portfolio Image Version to Deploy')
     }
 
     options { buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '10', daysToKeepStr: '', numToKeepStr: '10') }
@@ -11,7 +11,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 dir('image') {
-                    sh "make image TAG=${param.IMAGE_TAG}"
+                    sh "make image TAG=${params.IMAGE_TAG}"
                 }
             }
         }
@@ -32,7 +32,7 @@ pipeline {
         stage('Clean Docker Image') {
             steps {
                 dir('image') {
-                    sh "make clean TAG=${param.IMAGE_TAG}"
+                    sh "make clean TAG=${params.IMAGE_TAG}"
                 }
             }
         }
