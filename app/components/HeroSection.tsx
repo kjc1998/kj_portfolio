@@ -10,9 +10,10 @@ const HeroSection = () => {
 
 			<div className="container mx-auto px-4 z-10">
 				<div className="text-center mb-8">
-					<span className="text-lg md:text-xl text-gray-400 mb-2 block">Hi, I&apos;m</span>
 					<h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-4">
-						<span className="bg-gradient-to-r from-blue-400 via-purple-500 to-blue-400 text-transparent bg-clip-text bg-[size:200%] animate-gradient">Kai Jie</span>
+						<span className="bg-gradient-to-r from-blue-400 via-purple-500 to-blue-400 text-transparent bg-clip-text bg-[size:200%] animate-gradient">
+							Kai Jie Chow
+						</span>
 					</h1>
 					<div className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed px-8 flex justify-center">
 						<div className="flex-1 text-blue-400">Python Engineer</div>

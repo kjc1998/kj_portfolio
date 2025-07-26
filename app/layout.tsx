@@ -13,51 +13,33 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-	title: '[Your Name] - Mobile Developer',
+	title: 'Kai Jie Chow',
 	description:
-		'Welcome to my portfolio! I am a passionate mobile developer crafting beautiful and performant apps for iOS and Android. Specializing in native and cross-platform development, I create engaging mobile experiences that users love.',
+		'Welcome to my portfolio! I’m a software engineer with expertise in Python, Full-Stack Web Development, and DevOps, specialising in building web applications across the stack from backend to cloud infrastructure and frontend interfaces.',
 	keywords: [
-		'Mobile Developer',
-		'iOS Developer',
-		'Android Developer',
-		'React Native',
-		'Flutter',
-		'Swift',
+		// Title
+		'Software Engineer',
+		'Full-Stack',
+		'DevOps',
+		// Languages
+		'Python',
+		'TypeScript',
+		'React',
 		'Kotlin',
-		'Mobile Apps',
-		'Cross-Platform Development',
-		'Native Development',
-		'Mobile UI/UX',
-		'App Store',
-		'Play Store',
-		'Mobile Architecture',
-		'[Your Name]',
+		'Nextjs',
+		'Magik',
+		'SQL',
+		// Tools
+		'Django',
+		'Flask',
+		'SqlAlchemy',
+		// Methodologies
+		'Clean-Code',
+		'Test-Driven Development',
+		'Kai Jie Chow',
 	],
-	authors: [{ name: '[Your Name]' }],
-	creator: '[Your Name]',
-	openGraph: {
-		title: '[Your Name] - Mobile Developer Portfolio',
-		description: 'Passionate mobile developer creating exceptional iOS and Android applications. Explore my projects and app development expertise.',
-		url: 'https://your-domain.com',
-		siteName: '[Your Name] - Portfolio',
-		images: [
-			{
-				url: '/og-image.jpg',
-				width: 1200,
-				height: 630,
-				alt: '[Your Name] - Mobile Developer Portfolio',
-			},
-		],
-		locale: 'en_US',
-		type: 'website',
-	},
-	twitter: {
-		card: 'summary_large_image',
-		title: '[Your Name] - Mobile Developer',
-		description: 'Passionate mobile developer creating exceptional iOS and Android applications. Explore my projects and app development expertise.',
-		creator: '@yourusername',
-		images: ['/og-image.jpg'],
-	},
+	authors: [{ name: 'Kai Jie Chow' }],
+	creator: 'Kai Jie Chow',
 	robots: {
 		index: true,
 		follow: true,

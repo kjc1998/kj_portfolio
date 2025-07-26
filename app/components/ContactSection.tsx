@@ -1,4 +1,5 @@
 'use client';
+
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -14,10 +15,7 @@ const ContactSection = () => {
 							<Image src={CelineAndMe} alt="A picture of me and my love" fill className="rounded-lg" />
 						</div>
 					</div>
-					<h2 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Let&apos;s Create Amazing Web Applications</h2>
-					<p className="text-gray-400 max-w-2xl mx-auto">
-						Ready to bring your app idea to life? I specialize in creating polished, user-friendly mobile applications that deliver exceptional experiences.
-					</p>
+					<h2 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Let&apos;s Get In Touch!</h2>
 
 					{/* Location */}
 					<div className="flex items-center justify-center gap-2 text-gray-400">
@@ -35,37 +33,19 @@ const ContactSection = () => {
 						<span>Cambridge, UK</span>
 					</div>
 
-					{/* Contact Buttons */}
-					<div className="flex flex-col sm:flex-row justify-center gap-4">
+					{/* Social Links */}
+					<div className="flex justify-center gap-6">
 						<a
-							href="mailto:david@example.com"
-							className="px-8 py-3 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full font-medium hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-2 shadow-lg shadow-purple-500/20"
+							href="mailto:kj1chow@gmail.com"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-gray-800 rounded-full"
 						>
-							<svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+							<svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
 								<path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
 								<path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
 							</svg>
-							Get in Touch
 						</a>
-						<a
-							href="/resume.pdf"
-							target="_blank"
-							className="px-8 py-3 bg-gray-800 rounded-full font-medium hover:bg-gray-700 transition-colors inline-flex items-center justify-center gap-2 border border-gray-700"
-						>
-							<svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-								<path
-									fillRule="evenodd"
-									d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"
-									clipRule="evenodd"
-								/>
-								<path fillRule="evenodd" d="M8 11a1 1 0 100 2h4a1 1 0 100-2H8zm0-4a1 1 0 100 2h4a1 1 0 100-2H8z" clipRule="evenodd" />
-							</svg>
-							View Resume
-						</a>
-					</div>
-
-					{/* Social Links */}
-					<div className="flex justify-center gap-6">
 						<a
 							href="https://github.com/kjc1998"
 							target="_blank"
