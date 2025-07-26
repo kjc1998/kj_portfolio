@@ -6,7 +6,6 @@ COPY nginx.conf /etc/nginx/
 
 WORKDIR /portfolio
 RUN git clone https://github.com/kjc1998/kj_portfolio.git .
-RUN npm install && npm audit fix --force
 
 COPY entrypoint.sh /portfolio
 RUN chmod +x entrypoint.sh
