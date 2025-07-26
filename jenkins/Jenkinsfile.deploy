@@ -28,10 +28,13 @@ pipeline {
                 }
             }
         }
+    }
 
-        stage('Clean Docker Image') {
+    post {
+        always {
             steps {
                 dir('image') {
+                    // Clean Image
                     sh "make clean TAG=${params.IMAGE_TAG}"
                 }
             }
