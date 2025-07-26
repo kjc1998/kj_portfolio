@@ -1,4 +1,6 @@
 ENGINE := docker
+DOCKERHUB_USERNAME :=
+DOCKERHUB_PASSWORD :=
 
 IMAGE_NAME := kj_portfolio
 TAG := 
@@ -34,4 +36,4 @@ stop-remove:
 	$(ENGINE) ps -a -q --filter "ancestor=$(IMAGE)" | xargs -r $(ENGINE) rm
 
 login:
-	$(ENGINE) login $(REGISTRY)
+	echo "$(DOCKERHUB_PASSWORD)" | $(ENGINE) login -u "$(DOCKERHUB_USERNAME)" --password-stdin $(REGISTRY)
