@@ -1,0 +1,40 @@
+pipeline {
+    agent { label 'docker && linux && make' }
+
+    parameters {
+        string(name: 'IMAGE_TAG', description: 'Portfolio Image Version to Deploy')
+    }
+
+    options { buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '10', daysToKeepStr: '', numToKeepStr: '10') }
+
+    stages {
+        stage('Build Docker Image') {
+            steps {
+                dir('image') {
+                    sh "make image TAG=${param.IMAGE_TAG}"
+                }
+            }
+        }
+
+        // stage('Push Docker Image') {
+        //     steps {
+        //         sh "echo \"$DOCKERHUB_PASSWORD\" | docker login -u \"$DOCKERHUB_USERNAME\" --password-stdin"
+        //         sh "docker push $IMAGE_NAME:$IMAGE_TAG"
+        //     }
+        // }
+
+        // stage('Deploy') {
+        //     steps {
+        //         sh "./deploy.sh $IMAGE_NAME:$IMAGE_TAG"
+        //     }
+        // }
+
+        stage('Clean Docker Image') {
+            steps {
+                dir('image') {
+                    sh "make clean TAG=${param.IMAGE_TAG}"
+                }
+            }
+        }
+    }
+}
