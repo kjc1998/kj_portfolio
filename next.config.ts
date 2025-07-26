@@ -8,10 +8,6 @@ const nextConfig: NextConfig = {
 	images: { unoptimized: true },
 	/* only valid for absolut URL (CDN cases) */
 	// assetPrefix: './',
-
-	publicRuntimeConfig: {
-		basePath: process.env.BASE_PATH,
-	},
 };
 
 export default nextConfig;

@@ -1,8 +1,7 @@
-import getConfig from 'next/config';
+import nextConfig from '@/next.config';
 
 export class AppConfig {
 	basePath() {
-		const config = getConfig();
-		return config?.basePath || '';
+		return nextConfig.basePath || '';
 	}
 }
