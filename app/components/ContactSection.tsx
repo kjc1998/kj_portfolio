@@ -1,28 +1,37 @@
 'use client';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const ContactSection = () => {
 	return (
 		<section className="py-20 px-4 bg-gradient-to-b from-gray-900 to-black">
 			<div className="max-w-4xl mx-auto">
 				<motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center space-y-8">
-					<h2 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Let&apos;s Create Amazing Mobile Experiences</h2>
+					<div className="flex justify-center">
+						<div className="relative w-60 md:w-80 lg:w-96 aspect-[3/4]">
+							<Image src={`/celine_and_me.jpg`} alt="A picture of me and my love" fill className="rounded-lg" />
+						</div>
+					</div>
+					<h2 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Let&apos;s Create Amazing Web Applications</h2>
 					<p className="text-gray-400 max-w-2xl mx-auto">
-						Ready to bring your mobile app idea to life? I specialize in creating polished, user-friendly mobile applications that deliver exceptional experiences.
+						Ready to bring your app idea to life? I specialize in creating polished, user-friendly mobile applications that deliver exceptional experiences.
 					</p>
 
 					{/* Location */}
 					<div className="flex items-center justify-center gap-2 text-gray-400">
-						<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								strokeWidth="2"
-								d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-							/>
-							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-						</svg>
-						<span>San Francisco, CA</span>
+						<Link href="https://www.google.com/maps/search/+Cambridge,+Cambridgeshire,+England" className="blcok">
+							<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									strokeWidth="2"
+									d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+								/>
+								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+							</svg>
+						</Link>
+						<span>Cambridge, UK</span>
 					</div>
 
 					{/* Contact Buttons */}
