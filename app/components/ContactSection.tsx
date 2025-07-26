@@ -2,15 +2,18 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import { AppConfig } from '../common/AppConfig';
 
 const ContactSection = () => {
+	const appConfig = new AppConfig();
+
 	return (
 		<section className="py-20 px-4 bg-gradient-to-b from-gray-900 to-black">
 			<div className="max-w-4xl mx-auto">
 				<motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center space-y-8">
 					<div className="flex justify-center">
 						<div className="relative w-60 md:w-80 lg:w-96 aspect-[3/4]">
-							<Image src={`/celine_and_me.jpg`} alt="A picture of me and my love" fill className="rounded-lg" />
+							<Image src={`${appConfig.basePath()}/celine_and_me.jpg`} alt="A picture of me and my love" fill className="rounded-lg" />
 						</div>
 					</div>
 					<h2 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Let&apos;s Create Amazing Web Applications</h2>
