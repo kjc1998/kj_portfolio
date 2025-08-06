@@ -26,7 +26,6 @@ pipeline {
             }
         }
         stage('Build') {
-            environment { HOME = '.' }
             steps { sh 'npm install' }
         }
         stage('Test') {
