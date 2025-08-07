@@ -3,6 +3,7 @@ pipeline {
         docker {
             label 'docker'
             image 'docker.io/node:22-bookworm'
+            args '--user root'
         }
     }
 
