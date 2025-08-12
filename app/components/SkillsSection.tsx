@@ -11,7 +11,7 @@ const skills: Skill[] = [
 	{ name: 'Kotlin', level: 85 },
 	{ name: 'Flutter', level: 80 },
 	{ name: 'Firebase', level: 88 },
-	{ name: 'App Store Optimization', level: 85 },
+	{ name: 'Project Store Optimization', level: 85 },
 ];
 
 const SkillsSection = () => {

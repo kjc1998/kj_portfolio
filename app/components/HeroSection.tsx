@@ -22,7 +22,7 @@ const HeroSection = () => {
 					</div>
 				</div>
 
-				{/* Featured App Preview */}
+				{/* Featured Project Preview */}
 				<div className="max-w-lg mx-auto px-4">
 					<div className="group relative bg-gradient-to-b from-gray-800/50 to-gray-900/50 rounded-2xl p-1 hover:from-blue-500/20 hover:to-purple-500/20 transition-all duration-500">
 						<div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500"></div>
@@ -43,11 +43,11 @@ const HeroSection = () => {
 								<div className="flex justify-center">
 									<div className="inline-flex items-center gap-1.5 px-4 py-1 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 group-hover:border-blue-400/30 transition-colors">
 										<span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
-										<span className="text-blue-400 text-sm font-medium">Featured App</span>
+										<span className="text-blue-400 text-sm font-medium">Featured Project</span>
 									</div>
 								</div>
 
-								{/* App Info */}
+								{/* Project Info */}
 								<div className="text-center mt-6">
 									<h3 className="text-2xl font-bold mb-2 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent group-hover:from-blue-400 group-hover:to-purple-400 transition-all duration-300">
 										FitTracker Pro
