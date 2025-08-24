@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage('Build Docker Image') {
             steps {
-                dir('image') {
+                dir('docker_image') {
                     sh "make image TAG=${params.IMAGE_TAG}"
                 }
             }
@@ -22,7 +22,7 @@ pipeline {
 
         stage('Push Docker Image') {
             steps {
-                dir('image') {
+                dir('docker_image') {
                     // Prevent Interpolation of Sensitive Variables
                     sh 'make login DOCKERHUB_USERNAME=$DOCKERHUB_CRED_USR DOCKERHUB_PASSWORD=$DOCKERHUB_CRED_PSW'
                     sh "make push TAG=${params.IMAGE_TAG}"
@@ -33,7 +33,7 @@ pipeline {
 
     post {
         always {
-            dir('image') {
+            dir('docker_image') {
                 // Clean Image
                 sh "make clean TAG=${params.IMAGE_TAG}"
             }
