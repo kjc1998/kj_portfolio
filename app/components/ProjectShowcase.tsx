@@ -1,10 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
-import ProjectI from './project/ProjectI';
-import getProjectKeywords from './project/search';
-import Project from './project/Project';
+import { ProjectI } from './project/interface';
+import { filterProjects } from './project/search';
+import ProjectSection from './project/ProjectSection';
 import JenkinsLogo from '@/public/projects/jenkins.svg';
 import HomePage from '@/public/projects/laptop.jpg';
 
@@ -33,7 +33,7 @@ const ProjectShowcase = () => {
 	const [query, setQuery] = useState('');
 	const [isFocused, setIsFocused] = useState(false);
 
-	const filteredProjects = projects.filter((p) => getProjectKeywords(p).includes(query));
+	const filteredProjects = useMemo(() => filterProjects(projects, query), [query]);
 	return (
 		<section className="py-16 md:py-20 relative">
 			<div className="container mx-auto px-4">
@@ -54,20 +54,7 @@ const ProjectShowcase = () => {
 							</motion.div>
 						</div>
 					</div>
-
-					<div className="flex flex-col min-h-[500px]">
-						{filteredProjects.length > 0 ? (
-							<div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
-								{filteredProjects.map((project) => (
-									<Project key={project.id} project={project} />
-								))}
-							</div>
-						) : (
-							<div className="flex flex-1 items-center justify-center">
-								<p className="text-center text-[2rem] text-gray-400 text-xl font-semi-bold">No Result</p>
-							</div>
-						)}
-					</div>
+					<ProjectSection projects={filteredProjects} />
 				</div>
 			</div>
 		</section>
