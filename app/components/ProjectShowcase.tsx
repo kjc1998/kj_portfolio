@@ -25,7 +25,7 @@ const projects: ProjectI[] = [
 		status: 'ongoing',
 		image: HomePage,
 		description: 'Portfolio showcasing projects, skills and professional journey',
-		tags: ['nextjs', 'nginx', 'front-end'],
+		tags: ['nextjs', 'react', 'nginx', 'front-end'],
 	},
 ];
 
