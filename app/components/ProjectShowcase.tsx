@@ -6,7 +6,7 @@ import { ProjectI } from './project/interface';
 import { filterProjects } from './project/search';
 import ProjectSection from './project/ProjectSection';
 import JenkinsLogo from '@/public/projects/jenkins.svg';
-import HomePage from '@/public/projects/laptop.jpg';
+import KaiJie from '@/public/projects/kai jie.jpg';
 
 const projects: ProjectI[] = [
 	{
@@ -23,7 +23,7 @@ const projects: ProjectI[] = [
 		name: 'HomePage',
 		link: 'https://kj1chow.zapto.org/home/',
 		status: 'ongoing',
-		image: HomePage,
+		image: KaiJie,
 		description: 'Portfolio showcasing projects, skills and professional journey',
 		tags: ['nextjs', 'react', 'nginx', 'front-end'],
 	},
