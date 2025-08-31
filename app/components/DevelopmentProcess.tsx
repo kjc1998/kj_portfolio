@@ -64,12 +64,9 @@ const DevelopmentProcess = () => {
 	return (
 		<section className="py-16 md:py-20 relative">
 			<div className="container mx-auto px-4">
-				<h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-center">Development Process</h2>
-				<p className="text-sm sm:text-base text-gray-400 text-center mb-8 sm:mb-12 max-w-2xl mx-auto px-4">
-					A systematic approach to building exceptional mobile applications
-				</p>
+				<h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center">Development Process</h2>
 
-				<div className="max-w-5xl mx-auto">
+				<div className="max-w-5xl mx-auto p-8">
 					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 px-2">
 						{processes.map((process, index) => (
 							<div key={index} className="group relative">
