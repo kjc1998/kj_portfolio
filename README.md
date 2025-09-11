@@ -77,8 +77,3 @@
 2. **Styling Issues**
     - Run `npm run build` to ensure TailwindCSS classes are generated
     - Check for conflicting styles in `globals.css`
-
-3. **Image Loading**
-    - Verify images are in the correct format (PNG, JPG, WebP)
-    - Check image paths are correct
-    - Ensure images are in the `public` directory
