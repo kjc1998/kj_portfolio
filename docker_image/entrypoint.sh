@@ -2,7 +2,7 @@
 
 ## build package
 npm install
-npm audit fix --force
+npm audit fix
 BASE_PATH=$BASE_PATH npm run build
 
 ## run nginx
