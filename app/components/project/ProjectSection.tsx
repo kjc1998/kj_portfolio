@@ -23,7 +23,7 @@ const ProjectIcon = (prop: { project: ProjectI }) => {
 
 const ExpandIcon = () => {
 	return (
-		<div className="absolute w-8 h-8 m-1 top-0 right-0 sm:h-48rounded-2xl hover:scale-125">
+		<div className="absolute w-10 h-10 m-1 top-0 right-0 sm:h-48rounded-2xl hover:scale-125">
 			<div className="rounded-xl flex rounded-lg p-2 bg-gray-700">
 				<Image alt="application image" src={Expand} className="w-full h-full block" />
 			</div>
