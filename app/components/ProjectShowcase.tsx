@@ -18,7 +18,7 @@ const projects: ProjectI[] = [
 		tags: ['Jenkins', 'CICD', 'nginx', 'docker'],
 	},
 	{
-		name: 'HomePage',
+		name: 'Home',
 		link: 'https://kj1chow.zapto.org/home/',
 		status: 'ongoing',
 		image: KaiJie,
