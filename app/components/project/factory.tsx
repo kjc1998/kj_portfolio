@@ -3,9 +3,8 @@
 import { StaticImageData } from 'next/image';
 import { ProjectI, HighlightI, ProjectHighlightI } from './interface';
 
-const buildProject = (id: number, name: string, link: string | null, image: StaticImageData, status: 'ongoing' | 'done', description: string, tags: string[]): ProjectI => {
+const buildProject = (name: string, link: string | null, image: StaticImageData, status: 'ongoing' | 'done', description: string, tags: string[]): ProjectI => {
 	return {
-		id: id,
 		name: name,
 		link: link,
 		image: image,

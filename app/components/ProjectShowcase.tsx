@@ -10,7 +10,6 @@ import KaiJie from '@/public/projects/kai jie.jpg';
 
 const projects: ProjectI[] = [
 	{
-		id: 1,
 		name: 'Jenkins Pipeline',
 		link: 'https://kj1chow.zapto.org/jenkins/',
 		status: 'done',
@@ -19,7 +18,6 @@ const projects: ProjectI[] = [
 		tags: ['Jenkins', 'CICD', 'nginx', 'docker'],
 	},
 	{
-		id: 2,
 		name: 'HomePage',
 		link: 'https://kj1chow.zapto.org/home/',
 		status: 'ongoing',

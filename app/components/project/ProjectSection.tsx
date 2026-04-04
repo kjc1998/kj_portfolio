@@ -1,6 +1,7 @@
 'use-client';
 
 import { HighlightI, ProjectHighlightI, ProjectI } from './interface';
+import Expand from '@/public/expand.png';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -16,6 +17,16 @@ const ProjectIcon = (prop: { project: ProjectI }) => {
 			{/* Corner Decorations */}
 			<div className="absolute -top-1 -right-1 w-3 h-3 bg-blue-400 rounded-full blur-[2px]"></div>
 			<div className="absolute -bottom-1 -left-1 w-3 h-3 bg-purple-400 rounded-full blur-[2px]"></div>
+		</div>
+	);
+};
+
+const ExpandIcon = () => {
+	return (
+		<div className="absolute top-0 right-0 w-6 h-6 sm:h-48rounded-2xl m-3 flex-shrink-0">
+			<div className="w-full h-full rounded-xl flex items-center justify-center relative">
+				<Image alt="application image" src={Expand} fill />
+			</div>
 		</div>
 	);
 };
@@ -82,10 +93,13 @@ const ProjectInfo = (prop: { project: ProjectI; highlight: ProjectHighlightI }) 
 const Project = (prop: { project: ProjectI; highlight: ProjectHighlightI }) => {
 	return (
 		<div className="group bg-gradient-to-b from-gray-800/50 to-gray-900/50 rounded-xl sm:rounded-2xl p-1">
-			<div className="bg-gradient-to-b from-gray-900 to-gray-800 rounded-xl sm:rounded-2xl overflow-hidden p-4 sm:p-6 relative">
-				<div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6">
-					<ProjectIcon project={prop.project} />
-					<ProjectInfo project={prop.project} highlight={prop.highlight} />
+			<div className="bg-gradient-to-b from-gray-900 to-gray-800 rounded-xl sm:rounded-2xl overflow-hidden relative">
+				<div className="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-6">
+					<div className="p-4 sm:p-6">
+						<ProjectIcon project={prop.project} />
+						<ProjectInfo project={prop.project} highlight={prop.highlight} />
+					</div>
+					<ExpandIcon />
 				</div>
 			</div>
 		</div>
@@ -97,8 +111,8 @@ const ProjectSection = (prop: { projects: [ProjectI, ProjectHighlightI][] }) => 
 		<div className="flex flex-col min-h-[500px]">
 			{prop.projects.length > 0 ? (
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
-					{prop.projects.map(([project, highlight]) => (
-						<Project key={project.id} project={project} highlight={highlight} />
+					{prop.projects.map(([project, highlight], index) => (
+						<Project key={index} project={project} highlight={highlight} />
 					))}
 				</div>
 			) : (

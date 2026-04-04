@@ -3,7 +3,6 @@
 import { StaticImageData } from 'next/image';
 
 interface ProjectI {
-	id: number;
 	name: string;
 	link: string | null;
 	image: StaticImageData;

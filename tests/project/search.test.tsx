@@ -27,15 +27,12 @@ describe(`test filter projects functionality`, () => {
 	};
 
 	const projects = [
-		buildProject(
-			1,
-			'Jenkins Pipeline',
-			'https://kj1chow.zapto.org/jenkins/',
-			mockStaticImageData,
-			'done',
-			'A CI/CD pipeline to automate build, test, and deployment processes',
-			['Jenkins', 'CICD', 'nginx', 'docker'],
-		),
+		buildProject('Jenkins Pipeline', 'https://kj1chow.zapto.org/jenkins/', mockStaticImageData, 'done', 'A CI/CD pipeline to automate build, test, and deployment processes', [
+			'Jenkins',
+			'CICD',
+			'nginx',
+			'docker',
+		]),
 	];
 
 	it(`standard case`, () => {
