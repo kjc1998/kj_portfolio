@@ -2,6 +2,7 @@
 
 import JenkinsLogo from '@/public/projects/jenkins.svg';
 import KaiJie from '@/public/projects/kai jie.jpg';
+import TeslaTurbine from '@/public/projects/tesla turbine logo.jpg';
 import { motion } from 'framer-motion';
 import { useMemo, useState } from 'react';
 import { ProjectI } from './project/interface';
@@ -25,6 +26,15 @@ const projects: ProjectI[] = [
 		image: KaiJie,
 		description: 'Portfolio showcasing projects, skills and professional journey',
 		tags: ['nextjs', 'react', 'nginx', 'front-end'],
+		others: [],
+	},
+	{
+		name: 'Tesla Turbine Simulation',
+		link: 'https://github.com/kjc1998/Tesla-Turbine-Flow-Simulation',
+		status: 'done',
+		image: TeslaTurbine,
+		description: '100W pico-scaled Tesla Turbine for  £100',
+		tags: ['fluid dynamics', 'python', 'numpy', 'numerical simulation', 'CFD'],
 		others: [],
 	},
 ];
