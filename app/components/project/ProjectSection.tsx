@@ -1,7 +1,6 @@
 'use-client';
 
 import { HighlightI, ProjectHighlightI, ProjectI } from './interface';
-import Expand from '@/public/expand.png';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -21,11 +20,11 @@ const ProjectIcon = (prop: { project: ProjectI }) => {
 	);
 };
 
-const ExpandIcon = () => {
+const MoreSection = () => {
 	return (
-		<div className="absolute w-10 h-10 m-1 top-0 right-0 sm:h-48rounded-2xl hover:scale-125">
-			<div className="rounded-xl flex rounded-lg p-2 bg-gray-700">
-				<Image alt="application image" src={Expand} className="w-full h-full block" />
+		<div className="absolute w-12 h-8 m-1 top-0 right-0 sm:h-48rounded-2xl">
+			<div className="text-center hover:scale-110">
+				<u className="cursor-pointer hover:text-blue-400 transition-colors">more</u>
 			</div>
 		</div>
 	);
@@ -63,7 +62,7 @@ const ProjectInfo = (prop: { project: ProjectI; highlight: ProjectHighlightI }) 
 		<div className="flex-grow w-full sm:w-auto">
 			<div className="flex flex-col sm:flex-row items-center sm:items-start gap-2 mb-2">
 				<Link href={project.link ?? '#'} style={{ pointerEvents: project.link !== null ? 'auto' : 'none' }}>
-					<h3 className="text-xl font-bold group-hover:text-blue-400 transition-colors text-center sm:text-left break-words">
+					<h3 className="text-xl font-bold hover:text-blue-400 transition-colors text-center sm:text-left break-words">
 						<HighlightWord word={project.name} highlights={hightlight.name} />
 					</h3>
 				</Link>
@@ -99,7 +98,7 @@ const Project = (prop: { project: ProjectI; highlight: ProjectHighlightI }) => {
 						<ProjectIcon project={prop.project} />
 						<ProjectInfo project={prop.project} highlight={prop.highlight} />
 					</div>
-					<ExpandIcon />
+					<MoreSection />
 				</div>
 			</div>
 		</div>
