@@ -1,9 +1,18 @@
 'use-client';
 
 import { StaticImageData } from 'next/image';
+import React from 'react';
 import { HighlightI, ProjectHighlightI, ProjectI } from './interface';
 
-const buildProject = (name: string, link: string | null, image: StaticImageData, status: 'ongoing' | 'done', description: string, tags: string[]): ProjectI => {
+const buildProject = (
+	name: string,
+	link: string | null,
+	image: StaticImageData,
+	status: 'ongoing' | 'done',
+	description: string,
+	tags: string[],
+	others: React.JSX.Element[],
+): ProjectI => {
 	return {
 		name: name,
 		link: link,
@@ -11,6 +20,7 @@ const buildProject = (name: string, link: string | null, image: StaticImageData,
 		status: status,
 		description: description,
 		tags: tags,
+		others: others,
 	};
 };
 

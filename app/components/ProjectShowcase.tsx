@@ -10,12 +10,13 @@ import { filterProjects } from './project/search';
 
 const projects: ProjectI[] = [
 	{
-		name: 'Jenkins Pipeline',
+		name: 'Jenkins',
 		link: 'https://kj1chow.zapto.org/jenkins/',
 		status: 'done',
 		image: JenkinsLogo,
 		description: 'A CI/CD pipeline to automate build, test, and deployment processes',
 		tags: ['Jenkins', 'CICD', 'nginx', 'docker'],
+		others: [],
 	},
 	{
 		name: 'Home',
@@ -24,6 +25,7 @@ const projects: ProjectI[] = [
 		image: KaiJie,
 		description: 'Portfolio showcasing projects, skills and professional journey',
 		tags: ['nextjs', 'react', 'nginx', 'front-end'],
+		others: [],
 	},
 ];
 

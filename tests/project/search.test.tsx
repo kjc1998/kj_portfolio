@@ -1,5 +1,5 @@
 import { buildHighlight, buildProject, buildProjectHighlight } from '@/app/components/project/factory';
-import { searchHighlights, filterProjects } from '@/app/components/project/search';
+import { filterProjects, searchHighlights } from '@/app/components/project/search';
 import { StaticImageData } from 'next/image';
 
 describe(`search functionality`, () => {
@@ -27,12 +27,15 @@ describe(`test filter projects functionality`, () => {
 	};
 
 	const projects = [
-		buildProject('Jenkins Pipeline', 'https://kj1chow.zapto.org/jenkins/', mockStaticImageData, 'done', 'A CI/CD pipeline to automate build, test, and deployment processes', [
-			'Jenkins',
-			'CICD',
-			'nginx',
-			'docker',
-		]),
+		buildProject(
+			'Jenkins Pipeline',
+			'https://kj1chow.zapto.org/jenkins/',
+			mockStaticImageData,
+			'done',
+			'A CI/CD pipeline to automate build, test, and deployment processes',
+			['Jenkins', 'CICD', 'nginx', 'docker'],
+			[],
+		),
 	];
 
 	it(`standard case`, () => {

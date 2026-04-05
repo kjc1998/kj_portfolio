@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React from 'react';
 import { HighlightI, ProjectHighlightI, ProjectI } from './interface';
 import MoreSection from './MoreSection';
 
@@ -81,8 +81,6 @@ const ProjectInfo = (prop: { project: ProjectI; highlight: ProjectHighlightI }) 
 };
 
 const Project = (prop: { project: ProjectI; highlight: ProjectHighlightI }) => {
-	const [showMore, setShowMore] = useState(false);
-
 	return (
 		<div className="group bg-gradient-to-b from-gray-800/50 to-gray-900/50 rounded-xl sm:rounded-2xl p-1">
 			<div className="bg-gradient-to-b from-gray-900 to-gray-800 rounded-xl sm:rounded-2xl overflow-hidden relative">
@@ -91,15 +89,8 @@ const Project = (prop: { project: ProjectI; highlight: ProjectHighlightI }) => {
 						<ProjectIcon project={prop.project} />
 						<ProjectInfo project={prop.project} highlight={prop.highlight} />
 					</div>
-					<div className="absolute w-12 h-8 m-1 top-0 right-0 sm:h-48rounded-2xl">
-						<div className="text-center hover:scale-110">
-							<u className="cursor-pointer hover:text-blue-400 transition-colors" onClick={() => setShowMore(!showMore)}>
-								more
-							</u>
-						</div>
-					</div>
+					{prop.project.others.length > 0 ? <MoreSection project={prop.project} /> : <></>}
 				</div>
-				<MoreSection activate={[showMore, setShowMore]} />
 			</div>
 		</div>
 	);
