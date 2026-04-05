@@ -1,12 +1,12 @@
 'use client';
 
-import { useMemo, useState } from 'react';
-import { motion } from 'framer-motion';
-import { ProjectI } from './project/interface';
-import { filterProjects } from './project/search';
-import ProjectSection from './project/ProjectSection';
 import JenkinsLogo from '@/public/projects/jenkins.svg';
 import KaiJie from '@/public/projects/kai jie.jpg';
+import { motion } from 'framer-motion';
+import { useMemo, useState } from 'react';
+import { ProjectI } from './project/interface';
+import ProjectSection from './project/ProjectSection';
+import { filterProjects } from './project/search';
 
 const projects: ProjectI[] = [
 	{

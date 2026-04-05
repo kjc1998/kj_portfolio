@@ -1,9 +1,9 @@
 'use client';
 
+import CelineAndMe from '@/public/celine_and_me.jpg';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import CelineAndMe from '@/public/celine_and_me.jpg';
 
 const ContactSection = () => {
 	return (

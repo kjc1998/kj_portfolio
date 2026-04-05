@@ -1,7 +1,7 @@
 'use-client';
 
 import { StaticImageData } from 'next/image';
-import { ProjectI, HighlightI, ProjectHighlightI } from './interface';
+import { HighlightI, ProjectHighlightI, ProjectI } from './interface';
 
 const buildProject = (name: string, link: string | null, image: StaticImageData, status: 'ongoing' | 'done', description: string, tags: string[]): ProjectI => {
 	return {
@@ -27,4 +27,4 @@ const buildProjectHighlight = (name: HighlightI[], status: HighlightI[], descrip
 	};
 };
 
-export { buildProject, buildHighlight, buildProjectHighlight };
+export { buildHighlight, buildProject, buildProjectHighlight };

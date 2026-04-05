@@ -23,4 +23,4 @@ interface ProjectHighlightI {
 	tags: HighlightI[][];
 }
 
-export type { ProjectI, HighlightI, ProjectHighlightI };
+export type { HighlightI, ProjectHighlightI, ProjectI };

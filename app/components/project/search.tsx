@@ -1,7 +1,7 @@
 'use-client';
 
 import { buildHighlight, buildProjectHighlight } from './factory';
-import { ProjectI, HighlightI, ProjectHighlightI } from './interface';
+import { HighlightI, ProjectHighlightI, ProjectI } from './interface';
 
 const searchHighlights = (paragraph: string, search: string): HighlightI[] => {
 	if (search === '') return [];
@@ -39,4 +39,4 @@ const filterProjects = (projects: ProjectI[], search: string): [ProjectI, Projec
 	return search === '' ? result : result.filter(([_, s]) => hasSearchTerm(s));
 };
 
-export { searchHighlights, filterProjects };
+export { filterProjects, searchHighlights };
