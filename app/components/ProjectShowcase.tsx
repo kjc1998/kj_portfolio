@@ -49,11 +49,11 @@ const projects: ProjectI[] = [
 const SortProject = () => {
 	return (
 		<div className="flex md:justify-end mt-4 mb-4 gap-2 items-center">
-			<label className="text-sm text-gray-500">Sort By:</label>
-			<select className="bg-gray-800 text-sm rounded-lg p-2">
+			<label className="text-sm text-gray-500">Sort</label>
+			<select className="min-w-40 bg-gray-800 text-sm rounded-lg p-2">
 				<option value="date_desc">Date ↓</option>
 				<option value="date_asc">Date ↑</option>
-				<option value="alpha">Alphabetical (A-Z)</option>
+				<option value="alpha">A-Z</option>
 			</select>
 		</div>
 	);
