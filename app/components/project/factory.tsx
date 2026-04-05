@@ -6,6 +6,8 @@ import { HighlightI, ProjectHighlightI, ProjectI } from './interface';
 
 const buildProject = (
 	name: string,
+	startDate: Date,
+	endDate: Date | null,
 	link: string | null,
 	image: StaticImageData,
 	status: 'ongoing' | 'done',
@@ -15,6 +17,8 @@ const buildProject = (
 ): ProjectI => {
 	return {
 		name: name,
+		startDate: startDate,
+		endDate: endDate,
 		link: link,
 		image: image,
 		status: status,

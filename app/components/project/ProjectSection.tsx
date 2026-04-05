@@ -49,6 +49,10 @@ const ProjectInfo = (prop: { project: ProjectI; highlight: ProjectHighlightI }) 
 	const project = prop.project;
 	const hightlight = prop.highlight;
 	const statusColour = project.status === 'done' ? 'green' : 'blue';
+
+	const formatDate = (date: Date | null) => {
+		return date ? new Intl.DateTimeFormat('en-US', { month: '2-digit', year: '2-digit' }).format(date) : 'Present';
+	};
 	return (
 		<div className="flex-grow w-full sm:w-auto">
 			<div className="flex flex-col sm:flex-row items-center sm:items-start gap-2 mb-2">
@@ -60,6 +64,11 @@ const ProjectInfo = (prop: { project: ProjectI; highlight: ProjectHighlightI }) 
 				<span className={`px-2 py-0.5 rounded-full text-xs bg-${statusColour}-500/10 text-${statusColour}-400 border border-${statusColour}-500/20 whitespace-nowrap`}>
 					<HighlightWord word={project.status} highlights={hightlight.status} />
 				</span>
+			</div>
+			<div className="text-center sm:text-left">
+				<h4 className="text-gray-300">
+					{formatDate(project.startDate)} - {formatDate(project.endDate)}
+				</h4>
 			</div>
 			<p className="text-gray-400 mb-4 text-center sm:text-left">
 				<HighlightWord word={project.description} highlights={hightlight.description} />

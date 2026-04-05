@@ -29,6 +29,8 @@ describe(`test filter projects functionality`, () => {
 	const projects = [
 		buildProject(
 			'Jenkins Pipeline',
+			new Date(2020, 1, 1),
+			new Date(2020, 2, 1),
 			'https://kj1chow.zapto.org/jenkins/',
 			mockStaticImageData,
 			'done',

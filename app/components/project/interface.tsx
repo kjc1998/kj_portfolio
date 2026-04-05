@@ -5,6 +5,8 @@ import React from 'react';
 
 interface ProjectI {
 	name: string;
+	startDate: Date;
+	endDate: Date | null;
 	link: string | null;
 	image: StaticImageData;
 	status: 'ongoing' | 'done';
