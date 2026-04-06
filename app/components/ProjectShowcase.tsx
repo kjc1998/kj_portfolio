@@ -57,7 +57,7 @@ const ProjectShowcase = () => {
 
 	const filteredProjects = useMemo(() => filterProjects(projects, query), [query]);
 	const sortedProjects = sortProject(
-		filteredProjects.map(([project, _]) => project),
+		filteredProjects.map(([project]) => project),
 		sortBy,
 		isAsc,
 	);
