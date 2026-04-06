@@ -2,7 +2,7 @@
 
 import { StaticImageData } from 'next/image';
 import React from 'react';
-import { HighlightI, ProjectHighlightI, ProjectI } from './interface';
+import { HighlightI, ProjectHighlightI, ProjectI } from '../../features/project/interface';
 
 const buildProject = (
 	name: string,

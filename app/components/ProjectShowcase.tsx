@@ -5,10 +5,12 @@ import KaiJie from '@/public/projects/kai jie.jpg';
 import TeslaTurbine from '@/public/projects/tesla turbine logo.jpg';
 import { motion } from 'framer-motion';
 import { useMemo, useState } from 'react';
-import { buildProject } from './project/factory';
-import { ProjectI } from './project/interface';
+import { buildProject } from '../features/project/factory';
+import { ProjectI } from '../features/project/interface';
+import { filterProjects } from '../features/project/search';
+import { SortCategory } from '../models/enums';
 import ProjectSection from './project/ProjectSection';
-import { filterProjects } from './project/search';
+import SortSection from './project/SortSection';
 
 const projects: ProjectI[] = [
 	buildProject(
@@ -46,22 +48,11 @@ const projects: ProjectI[] = [
 	),
 ];
 
-const SortProject = () => {
-	return (
-		<div className="flex md:justify-end mt-4 mb-4 gap-2 items-center">
-			<label className="text-sm text-gray-500">Sort</label>
-			<select className="min-w-40 bg-gray-800 text-sm rounded-lg p-2">
-				<option value="date_desc">Date ↓</option>
-				<option value="date_asc">Date ↑</option>
-				<option value="alpha">A-Z</option>
-			</select>
-		</div>
-	);
-};
-
 const ProjectShowcase = () => {
 	const [query, setQuery] = useState('');
 	const [isFocused, setIsFocused] = useState(false);
+	const [sortBy, setSortBy] = useState(SortCategory.Date);
+	const [isAsc, setIsAsc] = useState(false);
 
 	const filteredProjects = useMemo(() => filterProjects(projects, query), [query]);
 	return (
@@ -84,7 +75,7 @@ const ProjectShowcase = () => {
 							</motion.div>
 						</div>
 						<div className="md:col-start-3">
-							<SortProject />
+							<SortSection sort={[sortBy, setSortBy]} asc={[isAsc, setIsAsc]} />
 						</div>
 					</div>
 					<ProjectSection projects={filteredProjects} />

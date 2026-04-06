@@ -1,6 +1,8 @@
+'use-client';
+
 import Image from 'next/image';
 import { useState } from 'react';
-import { ProjectI } from './interface';
+import { ProjectI } from '../../features/project/interface';
 
 const MoreOverlay = (prop: { project: ProjectI; activate: [boolean, (value: React.SetStateAction<boolean>) => void] }) => {
 	const [isActivate, setIsActivate] = prop.activate;

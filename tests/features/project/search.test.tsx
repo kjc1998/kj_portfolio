@@ -1,5 +1,5 @@
-import { buildHighlight, buildProject, buildProjectHighlight } from '@/app/components/project/factory';
-import { filterProjects, searchHighlights } from '@/app/components/project/search';
+import { buildHighlight, buildProject, buildProjectHighlight } from '@/app/features/project/factory';
+import { filterProjects, searchHighlights } from '@/app/features/project/search';
 import { StaticImageData } from 'next/image';
 
 describe(`search functionality`, () => {

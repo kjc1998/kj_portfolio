@@ -1,10 +1,10 @@
 'use client';
 
-import HeroSection from './components/HeroSection';
-import SkillsSection from './components/SkillsSection';
-import ProjectShowcase from './components/ProjectShowcase';
-import DevelopmentProcess from './components/DevelopmentProcess';
 import ContactSection from './components/ContactSection';
+import DevelopmentProcess from './components/DevelopmentProcess';
+import HeroSection from './components/HeroSection';
+import ProjectShowcase from './components/ProjectShowcase';
+import SkillsSection from './components/SkillsSection';
 
 export default function MobileDevPortfolio() {
 	return (

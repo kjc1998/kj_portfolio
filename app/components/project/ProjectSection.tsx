@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { HighlightI, ProjectHighlightI, ProjectI } from './interface';
+import { HighlightI, ProjectHighlightI, ProjectI } from '../../features/project/interface';
 import MoreSection from './MoreSection';
 
 const ProjectIcon = (prop: { project: ProjectI }) => {
