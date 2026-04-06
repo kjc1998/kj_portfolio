@@ -8,6 +8,7 @@ import { useMemo, useState } from 'react';
 import { buildProject } from '../features/project/factory';
 import { ProjectI } from '../features/project/interface';
 import { filterProjects } from '../features/project/search';
+import sortProject from '../features/project/sort';
 import { SortCategory } from '../models/enums';
 import ProjectSection from './project/ProjectSection';
 import SortSection from './project/SortSection';
@@ -55,6 +56,13 @@ const ProjectShowcase = () => {
 	const [isAsc, setIsAsc] = useState(false);
 
 	const filteredProjects = useMemo(() => filterProjects(projects, query), [query]);
+	const sortedProjects = sortProject(
+		filteredProjects.map(([project, _]) => project),
+		sortBy,
+		isAsc,
+	);
+	const filteredSorted = sortedProjects.map((pSorted) => filteredProjects.find((pFiltered) => pFiltered[0] === pSorted)!);
+
 	return (
 		<section className="py-16 md:py-20 relative">
 			<div className="container mx-auto px-4">
@@ -78,7 +86,7 @@ const ProjectShowcase = () => {
 							<SortSection sort={[sortBy, setSortBy]} asc={[isAsc, setIsAsc]} />
 						</div>
 					</div>
-					<ProjectSection projects={filteredProjects} />
+					<ProjectSection projects={filteredSorted} />
 				</div>
 			</div>
 		</section>
