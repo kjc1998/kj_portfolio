@@ -36,7 +36,7 @@ const MoreSection = (prop: { project: ProjectI }) => {
 		<>
 			<div className="absolute w-12 h-8 m-1 top-0 right-0 sm:h-48rounded-2xl">
 				<div className="text-center hover:scale-110">
-					<u className="cursor-pointer hover:text-blue-400 transition-colors" onClick={() => setShowMore(!showMore)}>
+					<u className="cursor-pointer text-gray-400 hover:text-blue-400 transition-colors" onClick={() => setShowMore(!showMore)}>
 						more
 					</u>
 				</div>

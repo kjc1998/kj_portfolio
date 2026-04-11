@@ -12,6 +12,7 @@ import { SortCategory } from '../models/enums';
 import { ProjectI } from '../models/project';
 import ProjectSection from './project/ProjectSection';
 import SortSection from './project/SortSection';
+import TeslaTurbineLayout from './project_layout/TeslaTurbineLayout';
 
 const projects: ProjectI[] = [
 	buildProject(
@@ -45,7 +46,7 @@ const projects: ProjectI[] = [
 		'done',
 		'100W pico-scaled Tesla Turbine for  £100',
 		['fluid dynamics', 'python', 'numpy', 'numerical simulation', 'CFD'],
-		null,
+		<TeslaTurbineLayout />,
 	),
 ];
 
