@@ -10,11 +10,11 @@ describe(`test sort projects functionality`, () => {
 		width: 1,
 	};
 
-	const pOne = buildProject('A', new Date(2020, 1, 1), new Date(2020, 2, 1), 'TEST_LINK', mockStaticImageData, 'done', 'TEST_DESCRIPTION', [], []);
-	const pTwo = buildProject('D', new Date(2020, 3, 1), new Date(2020, 4, 1), 'TEST_LINK', mockStaticImageData, 'done', 'TEST_DESCRIPTION', [], []);
-	const pThree = buildProject('E', new Date(2020, 1, 1), new Date(2020, 2, 1), 'TEST_LINK', mockStaticImageData, 'done', 'TEST_DESCRIPTION', [], []);
-	const pFour = buildProject('B', new Date(2020, 7, 1), new Date(2020, 9, 1), 'TEST_LINK', mockStaticImageData, 'done', 'TEST_DESCRIPTION', [], []);
-	const pFive = buildProject('A', new Date(2020, 7, 1), new Date(2020, 8, 1), 'TEST_LINK', mockStaticImageData, 'done', 'TEST_DESCRIPTION', [], []);
+	const pOne = buildProject('A', new Date(2020, 1, 1), new Date(2020, 2, 1), 'TEST_LINK', mockStaticImageData, 'done', 'TEST_DESCRIPTION', [], null);
+	const pTwo = buildProject('D', new Date(2020, 3, 1), new Date(2020, 4, 1), 'TEST_LINK', mockStaticImageData, 'done', 'TEST_DESCRIPTION', [], null);
+	const pThree = buildProject('E', new Date(2020, 1, 1), new Date(2020, 2, 1), 'TEST_LINK', mockStaticImageData, 'done', 'TEST_DESCRIPTION', [], null);
+	const pFour = buildProject('B', new Date(2020, 7, 1), new Date(2020, 9, 1), 'TEST_LINK', mockStaticImageData, 'done', 'TEST_DESCRIPTION', [], null);
+	const pFive = buildProject('A', new Date(2020, 7, 1), new Date(2020, 8, 1), 'TEST_LINK', mockStaticImageData, 'done', 'TEST_DESCRIPTION', [], null);
 
 	test.each`
 		isAscending | expected

@@ -36,7 +36,7 @@ describe(`test filter projects functionality`, () => {
 			'done',
 			'A CI/CD pipeline to automate build, test, and deployment processes',
 			['Jenkins', 'CICD', 'nginx', 'docker'],
-			[],
+			null,
 		),
 	];
 

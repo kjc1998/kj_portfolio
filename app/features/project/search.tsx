@@ -1,7 +1,7 @@
 'use-client';
 
+import { HighlightI, ProjectHighlightI, ProjectI } from '../../models/project';
 import { buildHighlight, buildProjectHighlight } from './factory';
-import { HighlightI, ProjectHighlightI, ProjectI } from './interface';
 
 const searchHighlights = (paragraph: string, search: string): HighlightI[] => {
 	if (search === '') return [];

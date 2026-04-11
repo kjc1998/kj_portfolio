@@ -2,7 +2,7 @@
 
 import { StaticImageData } from 'next/image';
 import React from 'react';
-import { HighlightI, ProjectHighlightI, ProjectI } from '../../features/project/interface';
+import { HighlightI, ProjectHighlightI, ProjectI } from '../../models/project';
 
 const buildProject = (
 	name: string,
@@ -13,7 +13,7 @@ const buildProject = (
 	status: 'ongoing' | 'done',
 	description: string,
 	tags: string[],
-	others: React.JSX.Element[],
+	others: React.JSX.Element | null,
 ): ProjectI => {
 	return {
 		name: name,

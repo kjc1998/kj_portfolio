@@ -6,10 +6,10 @@ import TeslaTurbine from '@/public/projects/tesla turbine logo.jpg';
 import { motion } from 'framer-motion';
 import { useMemo, useState } from 'react';
 import { buildProject } from '../features/project/factory';
-import { ProjectI } from '../features/project/interface';
 import { filterProjects } from '../features/project/search';
 import sortProject from '../features/project/sort';
 import { SortCategory } from '../models/enums';
+import { ProjectI } from '../models/project';
 import ProjectSection from './project/ProjectSection';
 import SortSection from './project/SortSection';
 
@@ -23,7 +23,7 @@ const projects: ProjectI[] = [
 		'done',
 		'A CI/CD pipeline to automate build, test, and deployment processes',
 		['Jenkins', 'CICD', 'nginx', 'docker'],
-		[],
+		null,
 	),
 	buildProject(
 		'Home',
@@ -34,7 +34,7 @@ const projects: ProjectI[] = [
 		'ongoing',
 		'Portfolio showcasing projects, skills and professional journey',
 		['nextjs', 'react', 'nginx', 'front-end'],
-		[],
+		null,
 	),
 	buildProject(
 		'Tesla Turbine Simulation',
@@ -45,7 +45,7 @@ const projects: ProjectI[] = [
 		'done',
 		'100W pico-scaled Tesla Turbine for  £100',
 		['fluid dynamics', 'python', 'numpy', 'numerical simulation', 'CFD'],
-		[],
+		null,
 	),
 ];
 

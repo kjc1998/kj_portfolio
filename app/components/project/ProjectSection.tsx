@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { HighlightI, ProjectHighlightI, ProjectI } from '../../features/project/interface';
+import { HighlightI, ProjectHighlightI, ProjectI } from '../../models/project';
 import MoreSection from './MoreSection';
 
 const ProjectIcon = (prop: { project: ProjectI }) => {
@@ -96,7 +96,7 @@ const Project = (prop: { project: ProjectI; highlight: ProjectHighlightI }) => {
 				<div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6">
 					<ProjectIcon project={prop.project} />
 					<ProjectInfo project={prop.project} highlight={prop.highlight} />
-					{prop.project.others.length > 0 ? <MoreSection project={prop.project} /> : <></>}
+					{prop.project.others !== null ? <MoreSection project={prop.project} /> : <></>}
 				</div>
 			</div>
 		</div>

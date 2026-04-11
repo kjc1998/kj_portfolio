@@ -1,7 +1,7 @@
 'use-client';
 
 import { SortCategory } from '@/app/models/enums';
-import { ProjectI } from './interface';
+import { ProjectI } from '../../models/project';
 
 const sortProject = (projects: ProjectI[], category: SortCategory, isAscending: boolean) => {
 	const compareFunc = (a: ProjectI, b: ProjectI) => {
