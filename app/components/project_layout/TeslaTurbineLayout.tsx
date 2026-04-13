@@ -1,5 +1,6 @@
 'use-client';
 
+import gdpVideo from '@/public/videos/gdpVideo.mp4';
 import TextComponent from '../project/layout_components/TextComponent';
 import VideoComponent from '../project/layout_components/VideoComponent';
 
@@ -9,7 +10,7 @@ const TeslaTurbineLayout = () => {
 	return (
 		<>
 			<TextComponent text={summary} />
-			<VideoComponent path={'/videos/gdpVideo.mp4'} />
+			<VideoComponent path={gdpVideo} />
 		</>
 	);
 };
