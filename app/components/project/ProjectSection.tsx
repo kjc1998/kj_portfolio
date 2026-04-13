@@ -56,7 +56,7 @@ const ProjectInfo = (prop: { project: ProjectI; highlight: ProjectHighlightI }) 
 	return (
 		<div className="flex-grow w-full sm:w-auto">
 			<div className="flex flex-col sm:flex-row items-center sm:items-start gap-2 mb-2">
-				<Link href={project.link ?? '#'} style={{ pointerEvents: project.link !== null ? 'auto' : 'none' }}>
+				<Link href={project.link ?? '#'} style={{ pointerEvents: project.link !== null ? 'auto' : 'none' }} prefetch={false}>
 					<h3 className="text-xl font-bold hover:text-blue-400 transition-colors text-center sm:text-left break-words">
 						<HighlightWord word={project.name} highlights={hightlight.name} />
 					</h3>
