@@ -10,13 +10,15 @@ const MoreOverlay = (prop: { project: ProjectI; activate: [boolean, (value: Reac
 	return isActivate ? (
 		<div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80">
 			<div className="relative w-11/12 max-w-2xl h-[80vh] bg-gray-900 border border-white/10 p-8 rounded-2xl shadow-2xl">
-				<button onClick={() => setIsActivate(false)} className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
-					<svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-					</svg>
-				</button>
-				<h2 className="text-2xl font-bold text-white mb-4">{project.name}</h2>
-				<div className="h-[70vh] overflow-y-auto scrollbar-hide">
+				<div className="h-[10%]">
+					<button onClick={() => setIsActivate(false)} className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
+						<svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+						</svg>
+					</button>
+					<h2 className="text-2xl font-bold text-white mb-4">{project.name}</h2>
+				</div>
+				<div className="h-[90%] overflow-y-auto scrollbar-hide">
 					<div className="flex items-center justify-center">
 						<div className="aspect-square h-[25vh] p-2  rounded-2xl bg-gray-700/30">
 							<Image alt="application image" src={project.image} className="rounded-2xl" />

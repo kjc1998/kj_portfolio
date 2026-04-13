@@ -8,6 +8,8 @@ const nextConfig: NextConfig = {
 	images: { unoptimized: true },
 	/* only valid for absolut URL (CDN cases) */
 	// assetPrefix: './',
+
+	// Webpack Configs
 	webpack(config) {
 		config.module.rules.push({
 			test: /\.(mp4|webm)$/,
@@ -17,6 +19,15 @@ const nextConfig: NextConfig = {
 			},
 		});
 		return config;
+	},
+
+	// Turbopack Configs
+	turbopack: {
+		rules: {
+			'*.mp4': {
+				type: 'asset',
+			},
+		},
 	},
 };
 
