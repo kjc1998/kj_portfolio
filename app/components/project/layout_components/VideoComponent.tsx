@@ -1,5 +1,4 @@
 const VideoComponent = (props: { path: string }) => {
-	console.log(props.path);
 	return (
 		<div className="flex justify-center">
 			<video className="w-[80%]" controls preload="metadata">
