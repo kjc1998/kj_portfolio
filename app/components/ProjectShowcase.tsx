@@ -12,7 +12,7 @@ import { SortCategory } from '../models/enums';
 import { ProjectI } from '../models/project';
 import ProjectSection from './project/ProjectSection';
 import SortSection from './project/SortSection';
-import TeslaTurbineLayout from './project_layout/TeslaTurbineLayout';
+import TeslaTurbineLayout from './project_layouts/TeslaTurbineLayout';
 
 const projects: ProjectI[] = [
 	buildProject(
