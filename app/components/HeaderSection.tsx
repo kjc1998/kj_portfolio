@@ -1,7 +1,7 @@
 import Resume from '@/public/shared/pdfs/resume.pdf';
 import { Section } from '../models/enums';
 
-const HeaderSection = () => {
+const HeaderSection = (prop: { isUnlocked: boolean }) => {
 	const sections = Object.values(Section);
 
 	return (
@@ -12,14 +12,18 @@ const HeaderSection = () => {
 						{value}
 					</a>
 				))}
-				<a
-					key={sections.length}
-					href={Resume}
-					target="_blank"
-					className="px-4 py-1.5 text-lg rounded-full hover:bg-white hover:text-gray-500 hover:shadow-sm transition-all duration-200"
-				>
-					Resume
-				</a>
+				{prop.isUnlocked ? (
+					<a
+						key={sections.length}
+						href={Resume}
+						target="_blank"
+						className="px-4 py-1.5 text-lg rounded-full hover:bg-white hover:text-gray-500 hover:shadow-sm transition-all duration-200 animate-unlock"
+					>
+						Resume
+					</a>
+				) : (
+					<></>
+				)}
 			</nav>
 		</section>
 	);
