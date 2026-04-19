@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
 	// Webpack Configs
 	webpack(config) {
 		config.module.rules.push({
-			test: /\.(mp4|webm)$/,
+			test: /\.(mp4|webm|pdf)$/,
 			type: 'asset/resource',
 			generator: {
 				filename: 'static/media/[name].[hash][ext]',
@@ -25,6 +25,9 @@ const nextConfig: NextConfig = {
 	turbopack: {
 		rules: {
 			'*.mp4': {
+				type: 'asset',
+			},
+			'*.pdf': {
 				type: 'asset',
 			},
 		},

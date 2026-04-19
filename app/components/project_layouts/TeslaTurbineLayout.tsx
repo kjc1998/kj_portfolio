@@ -5,7 +5,7 @@ import Fung from '@/public/profilePics/Fung.png';
 import Jerryl from '@/public/profilePics/Jerryl.jpg';
 import Nicholas from '@/public/profilePics/Nicholas.jpg';
 import Shawn from '@/public/profilePics/Shawn.jpg';
-import gdpVideo from '@/public/videos/gdpVideo.mp4';
+import gdpVideo from '@/public/shared/videos/gdpVideo.mp4';
 import LayoutComponent from '../project/layout_components/LayoutComponent';
 import ProfileComponent, { ProfileI } from '../project/layout_components/ProfileComponent';
 import TextComponent from '../project/layout_components/TextComponent';
