@@ -25,6 +25,23 @@ const ContactSection = (prop: { unlock: [boolean, (value: React.SetStateAction<b
 						>
 							Touch!
 						</span>
+						<span className="relative">
+							<div className="absolute -right-12 -top-7 w-12 h-12 text-white animate-bounce-subtle pointer-events-none">
+								<svg
+									viewBox="0 0 50 50"
+									className="w-full h-full animate-bounce-slight"
+									fill="none"
+									stroke="currentColor"
+									strokeWidth="3.5"
+									strokeLinecap="round"
+									strokeLinejoin="round"
+								>
+									<path d="M20 15 C 30 15, 50 30, 15 45" />
+
+									<path d="M22 35 L 12 46 L 26 48" />
+								</svg>
+							</div>
+						</span>
 					</h2>
 
 					{/* Location */}
