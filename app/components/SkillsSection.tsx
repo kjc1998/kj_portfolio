@@ -1,5 +1,7 @@
 'use client';
 
+import { Section } from '../models/enums';
+
 interface Skill {
 	name: string;
 	level: number;
@@ -24,7 +26,7 @@ const fields: Skill[] = [
 
 const SkillsSection = () => {
 	return (
-		<section className="py-16 md:py-20 relative">
+		<section id={Section.Skills} className="py-16 md:py-20 relative">
 			<div className="container mx-auto px-4">
 				<h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center">Technical Expertise</h2>
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 max-w-5xl mx-auto p-8">
@@ -55,7 +57,7 @@ const SkillsSection = () => {
 									></div>
 								</div>
 								{/* Hover Card with Details */}
-								<div className="hidden lg:block absolute left-full top-0 ml-4 w-48 p-3 rounded-lg bg-gray-800/90 backdrop-blur-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-10 border border-gray-700/50">
+								<div className="hidden lg:block absolute left-full top-0 ml-4 w-48 p-3 rounded-lg bg-gray-800/90 backdrop-blur-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-700/50">
 									<div className="text-sm space-y-2">
 										<p className="font-medium">{skill.name}</p>
 										<div className="space-y-1 text-xs text-gray-400">
@@ -82,7 +84,7 @@ const SkillsSection = () => {
 									key={field.name}
 									className="group bg-gray-800/30 backdrop-blur-sm p-4 rounded-xl border border-gray-700/50 hover:border-purple-500/50 transition-colors relative overflow-hidden"
 								>
-									<div className="relative z-10">
+									<div className="relative">
 										<h4 className="font-medium mb-2 break-words">{field.name}</h4>
 										<div className="flex items-center gap-2">
 											<div className="flex-grow h-1.5 bg-gray-700/50 rounded-full overflow-hidden">

@@ -8,7 +8,7 @@ import { useMemo, useState } from 'react';
 import { buildProject } from '../features/project/factory';
 import { filterProjects } from '../features/project/search';
 import sortProject from '../features/project/sort';
-import { SortCategory } from '../models/enums';
+import { Section, SortCategory } from '../models/enums';
 import { ProjectI } from '../models/project';
 import ProjectSection from './project/ProjectSection';
 import SortSection from './project/SortSection';
@@ -65,7 +65,7 @@ const ProjectShowcase = () => {
 	const filteredSorted = sortedProjects.map((pSorted) => filteredProjects.find((pFiltered) => pFiltered[0] === pSorted)!);
 
 	return (
-		<section className="py-16 md:py-20 relative">
+		<section id={Section.Projects} className="py-16 md:py-20 relative">
 			<div className="container mx-auto px-4">
 				<h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center">Projects</h2>
 				<div className="bg-gray-900 sm:rounded-2xl p-8">

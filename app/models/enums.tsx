@@ -1,8 +1,16 @@
 'use-client';
 
-const enum SortCategory {
+enum SortCategory {
 	Title = 'title',
 	Date = 'date',
 }
 
-export { SortCategory };
+enum Section {
+	Profile = 'Profile',
+	Skills = 'Skills',
+	Projects = 'Projects',
+	Development = 'Development',
+	Contact = 'Contact',
+}
+
+export { Section, SortCategory };

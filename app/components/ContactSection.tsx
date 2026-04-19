@@ -4,10 +4,11 @@ import CelineAndMe from '@/public/celine_and_me.jpg';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Section } from '../models/enums';
 
 const ContactSection = () => {
 	return (
-		<section className="py-20 px-4 bg-gradient-to-b from-gray-900 to-black">
+		<section id={Section.Contact} className="py-20 px-4 bg-gradient-to-b from-gray-900 to-black">
 			<div className="max-w-4xl mx-auto">
 				<motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center space-y-8">
 					<div className="flex justify-center">

@@ -1,5 +1,6 @@
 'use client';
 import { JSX } from 'react';
+import { Section } from '../models/enums';
 
 interface Process {
 	title: string;
@@ -62,7 +63,7 @@ const processes: Process[] = [
 
 const DevelopmentProcess = () => {
 	return (
-		<section className="py-16 md:py-20 relative">
+		<section id={Section.Development} className="py-16 md:py-20 relative">
 			<div className="container mx-auto px-4">
 				<h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center">Development Process</h2>
 

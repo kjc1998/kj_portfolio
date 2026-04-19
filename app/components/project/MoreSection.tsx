@@ -8,7 +8,7 @@ const MoreOverlay = (prop: { project: ProjectI; activate: [boolean, (value: Reac
 	const [isActivate, setIsActivate] = prop.activate;
 	const project = prop.project;
 	return isActivate ? (
-		<div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80">
+		<div className="fixed inset-0 flex items-center justify-center bg-black/80">
 			<div className="relative w-11/12 max-w-2xl h-[80vh] bg-gray-900 border border-white/10 p-8 rounded-2xl shadow-2xl">
 				<div className="h-[10%]">
 					<button onClick={() => setIsActivate(false)} className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
