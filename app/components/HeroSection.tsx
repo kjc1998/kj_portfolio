@@ -34,8 +34,8 @@ const HeroBackground = () => {
 					quantity: 4,
 				},
 				repulse: {
-					distance: 200,
-					duration: 0.4,
+					distance: 100,
+					duration: 2,
 				},
 			},
 		},
@@ -51,17 +51,13 @@ const HeroBackground = () => {
 				width: 2,
 			},
 			move: {
-				direction: 'none',
 				enable: true,
-				outModes: {
-					default: 'out',
-				},
 				speed: 1,
 			},
 			number: {
-				value: 30,
+				value: 40,
 				limit: {
-					value: 50,
+					value: 60,
 				},
 			},
 			opacity: {
@@ -75,14 +71,16 @@ const HeroBackground = () => {
 			},
 		},
 		fullScreen: false,
+		detectRetina: false,
+		pauseOnOutsideViewport: true,
 	};
 
 	return init ? (
 		<div
 			className="absolute inset-0"
 			style={{
-				maskImage: 'radial-gradient(circle at center, black 30%, transparent 70%)',
-				WebkitMaskImage: 'radial-gradient(circle at center, black 30%, transparent 70%)',
+				maskImage: 'radial-gradient(circle at center, black 40%, transparent 80%)',
+				WebkitMaskImage: 'radial-gradient(circle at center, black 40%, transparent 80%)',
 			}}
 		>
 			<Particles className="h-full" options={options} />
