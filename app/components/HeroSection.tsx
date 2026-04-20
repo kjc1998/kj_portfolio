@@ -60,6 +60,9 @@ const HeroBackground = () => {
 			},
 			number: {
 				value: 30,
+				limit: {
+					value: 50,
+				},
 			},
 			opacity: {
 				value: 0.7,
