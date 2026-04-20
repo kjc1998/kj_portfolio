@@ -68,11 +68,21 @@ const HeroBackground = () => {
 					particles: {
 						links: {
 							distance: 75,
+							width: 0.5,
 						},
 						size: {
 							value: {
-								min: 1,
-								max: 3,
+								min: 0.5,
+								max: 2,
+							},
+						},
+						move: {
+							speed: 0.5,
+						},
+						number: {
+							value: 25,
+							limit: {
+								value: 40,
 							},
 						},
 					},
@@ -98,7 +108,7 @@ const HeroBackground = () => {
 
 const HeroSection = () => {
 	return (
-		<section id={Section.Profile} className="relative min-h-[80vh] flex items-center justify-center overflow-hidden py-16 sm:py-20">
+		<section id={Section.Profile} className="relative min-h-[40vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden py-16 sm:py-20">
 			<HeroBackground />
 			<div className="absolute inset-0">
 				<div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-500/20 via-transparent to-transparent"></div>
@@ -106,8 +116,8 @@ const HeroSection = () => {
 			</div>
 
 			<div className="container mx-auto px-4">
-				<div className="text-center mb-8">
-					<h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-16">
+				<div className="text-center mb-4 md:mb-8">
+					<h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-4 md:mb-16">
 						<span className="bg-gradient-to-r from-blue-400 via-purple-500 to-blue-400 text-white/40 bg-clip-text bg-[size:200%] animate-gradient">Kai Jie Chow</span>
 					</h1>
 					<div className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed px-8 flex justify-center">

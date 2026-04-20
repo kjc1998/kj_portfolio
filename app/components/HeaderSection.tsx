@@ -5,7 +5,7 @@ const HeaderSection = (prop: { isUnlocked: boolean }) => {
 	const sections = Object.values(Section);
 
 	return (
-		<section className="fixed inset-x-0 top-4 z-10 mx-auto w-[92%] sm:w-fit px-4 sm:px-5 py-2 bg-gray-700/5 backdrop-blur-md rounded-full shadow-lg">
+		<section className="sticky md:fixed md:inset-x-0 top-4 z-10 mx-auto w-[92%] sm:w-fit px-4 sm:px-5 py-2 bg-gray-700/5 backdrop-blur-md rounded-full shadow-lg">
 			<nav className="flex justify-center flex-wrap gap-3 sm:gap-6">
 				{sections.map((value, index) => (
 					<a key={index} href={`#${value}`} className="px-4 py-1.5 text-lg rounded-full hover:bg-white hover:text-gray-500 hover:shadow-sm transition-all duration-200">
