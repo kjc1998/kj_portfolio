@@ -73,6 +73,16 @@ const HeroBackground = () => {
 		fullScreen: false,
 		detectRetina: false,
 		pauseOnOutsideViewport: true,
+		responsive: [
+			{
+				maxWidth: 768,
+				options: {
+					particles: {
+						links: { enable: false },
+					},
+				},
+			},
+		],
 	};
 
 	return init ? (
