@@ -20,23 +20,12 @@ const HeroBackground = () => {
 		fpsLimit: 120,
 		interactivity: {
 			events: {
-				onClick: {
-					enable: true,
-					mode: 'push',
-				},
-				onHover: {
-					enable: true,
-					mode: 'repulse',
-				},
+				onClick: { enable: true, mode: 'push' },
+				onHover: { enable: true, mode: 'repulse' },
 			},
 			modes: {
-				push: {
-					quantity: 4,
-				},
-				repulse: {
-					distance: 100,
-					duration: 2,
-				},
+				push: { quantity: 4 },
+				repulse: { distance: 100, duration: 2 },
 			},
 		},
 		particles: {
@@ -47,7 +36,6 @@ const HeroBackground = () => {
 				color: '#ffffff',
 				distance: 150,
 				enable: true,
-				opacity: 0.5,
 				width: 2,
 			},
 			move: {
@@ -60,14 +48,14 @@ const HeroBackground = () => {
 					value: 60,
 				},
 			},
-			opacity: {
-				value: 0.7,
-			},
 			shape: {
 				type: 'circle',
 			},
 			size: {
-				value: { min: 1, max: 5 },
+				value: {
+					min: 1,
+					max: 5,
+				},
 			},
 		},
 		fullScreen: false,
@@ -78,7 +66,15 @@ const HeroBackground = () => {
 				maxWidth: 768,
 				options: {
 					particles: {
-						links: { enable: false },
+						links: {
+							distance: 75,
+						},
+						size: {
+							value: {
+								min: 1,
+								max: 3,
+							},
+						},
 					},
 				},
 			},
@@ -89,8 +85,8 @@ const HeroBackground = () => {
 		<div
 			className="absolute inset-0"
 			style={{
-				maskImage: 'radial-gradient(circle at center, black 40%, transparent 80%)',
-				WebkitMaskImage: 'radial-gradient(circle at center, black 40%, transparent 80%)',
+				maskImage: 'radial-gradient(ellipse at center, transparent 30%, black 60%, transparent 90%)',
+				WebkitMaskImage: 'radial-gradient(ellipse at center, transparent 30%, black 60%, transparent 90%)',
 			}}
 		>
 			<Particles className="h-full" options={options} />
