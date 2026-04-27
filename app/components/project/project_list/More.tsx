@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-import { ProjectI } from '../../models/project';
+import { ProjectI } from '../../../models/project';
 
 const MoreOverlay = (prop: { project: ProjectI; activate: [boolean, (value: React.SetStateAction<boolean>) => void] }) => {
 	const [isActivate, setIsActivate] = prop.activate;
@@ -33,7 +33,7 @@ const MoreOverlay = (prop: { project: ProjectI; activate: [boolean, (value: Reac
 	);
 };
 
-const MoreSection = (prop: { project: ProjectI }) => {
+const More = (prop: { project: ProjectI }) => {
 	const [showMore, setShowMore] = useState(false);
 
 	return (
@@ -50,4 +50,4 @@ const MoreSection = (prop: { project: ProjectI }) => {
 	);
 };
 
-export default MoreSection;
+export default More;

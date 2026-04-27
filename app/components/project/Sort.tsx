@@ -2,7 +2,7 @@
 
 import { SortCategory } from '../../models/enums';
 
-const SortSection = (prop: { sort: [SortCategory, (value: React.SetStateAction<SortCategory>) => void]; asc: [boolean, (value: React.SetStateAction<boolean>) => void] }) => {
+const Sort = (prop: { sort: [SortCategory, (value: React.SetStateAction<SortCategory>) => void]; asc: [boolean, (value: React.SetStateAction<boolean>) => void] }) => {
 	const [sortBy, setSortBy] = prop.sort;
 	const [isAsc, setIsAsc] = prop.asc;
 
@@ -50,4 +50,4 @@ const SortSection = (prop: { sort: [SortCategory, (value: React.SetStateAction<S
 	);
 };
 
-export default SortSection;
+export default Sort;

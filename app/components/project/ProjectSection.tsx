@@ -5,14 +5,14 @@ import KaiJie from '@/public/projects/kai jie.jpg';
 import TeslaTurbine from '@/public/projects/tesla turbine logo.jpg';
 import { motion } from 'framer-motion';
 import { useMemo, useState } from 'react';
-import { buildProject } from '../features/project/factory';
-import { filterProjects } from '../features/project/search';
-import sortProject from '../features/project/sort';
-import { Section, SortCategory } from '../models/enums';
-import { ProjectI } from '../models/project';
-import ProjectList from './project/ProjectList';
-import SortSection from './project/SortSection';
-import TeslaTurbineLayout from './project_layouts/TeslaTurbineLayout';
+import { buildProject } from '../../features/project/factory';
+import { filterProjects } from '../../features/project/search';
+import sortProject from '../../features/project/sort';
+import { Section, SortCategory } from '../../models/enums';
+import { ProjectI } from '../../models/project';
+import ProjectList from './project_list/ProjectList';
+import Sort from './Sort';
+import TeslaTurbineLayout from './TeslaTurbineLayout';
 
 const projects: ProjectI[] = [
 	buildProject(
@@ -84,7 +84,7 @@ const ProjectShowcase = () => {
 							</motion.div>
 						</div>
 						<div className="md:col-start-3">
-							<SortSection sort={[sortBy, setSortBy]} asc={[isAsc, setIsAsc]} />
+							<Sort sort={[sortBy, setSortBy]} asc={[isAsc, setIsAsc]} />
 						</div>
 					</div>
 					<ProjectList projects={filteredSorted} />

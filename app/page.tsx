@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import ContactSection from './components/ContactSection';
 import HeaderSection from './components/HeaderSection';
 import HeroSection from './components/HeroSection';
-import ProjectSection from './components/ProjectSection';
+import ProjectSection from './components/project/ProjectSection';
 import SkillsSection from './components/SkillsSection';
 import WorkflowSection from './components/WorkflowSection';
 
