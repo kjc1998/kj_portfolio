@@ -1,9 +1,9 @@
 import ContactIcon from '@/public/sections/contact.png';
-import DevelopmentIcon from '@/public/sections/development.png';
 import ProfileIcon from '@/public/sections/profile.png';
 import ProjectsIcon from '@/public/sections/projects.png';
 import ResumeIcon from '@/public/sections/resume.png';
 import SkillsIcon from '@/public/sections/skills.png';
+import WorkflowIcon from '@/public/sections/workflow.png';
 import Resume from '@/public/shared/pdfs/resume.pdf';
 import Image from 'next/image';
 import { Section } from '../models/enums';
@@ -14,7 +14,7 @@ const HeaderSection = (prop: { isUnlocked: boolean }) => {
 		[Section.Profile]: ProfileIcon,
 		[Section.Skills]: SkillsIcon,
 		[Section.Projects]: ProjectsIcon,
-		[Section.Development]: DevelopmentIcon,
+		[Section.Workflow]: WorkflowIcon,
 		[Section.Contact]: ContactIcon,
 	};
 

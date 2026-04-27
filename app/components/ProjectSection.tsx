@@ -10,7 +10,7 @@ import { filterProjects } from '../features/project/search';
 import sortProject from '../features/project/sort';
 import { Section, SortCategory } from '../models/enums';
 import { ProjectI } from '../models/project';
-import ProjectSection from './project/ProjectSection';
+import ProjectList from './project/ProjectList';
 import SortSection from './project/SortSection';
 import TeslaTurbineLayout from './project_layouts/TeslaTurbineLayout';
 
@@ -87,7 +87,7 @@ const ProjectShowcase = () => {
 							<SortSection sort={[sortBy, setSortBy]} asc={[isAsc, setIsAsc]} />
 						</div>
 					</div>
-					<ProjectSection projects={filteredSorted} />
+					<ProjectList projects={filteredSorted} />
 				</div>
 			</div>
 		</section>

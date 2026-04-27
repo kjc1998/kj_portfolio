@@ -9,7 +9,7 @@ enum Section {
 	Profile = 'Profile',
 	Skills = 'Skills',
 	Projects = 'Projects',
-	Development = 'Development',
+	Workflow = 'Workflow',
 	Contact = 'Contact',
 }
 

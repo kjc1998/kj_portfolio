@@ -103,7 +103,7 @@ const Project = (prop: { project: ProjectI; highlight: ProjectHighlightI }) => {
 	);
 };
 
-const ProjectSection = (prop: { projects: [ProjectI, ProjectHighlightI][] }) => {
+const ProjectList = (prop: { projects: [ProjectI, ProjectHighlightI][] }) => {
 	return (
 		<div className="flex flex-col min-h-[500px]">
 			{prop.projects.length > 0 ? (
@@ -121,4 +121,4 @@ const ProjectSection = (prop: { projects: [ProjectI, ProjectHighlightI][] }) => 
 	);
 };
 
-export default React.memo(ProjectSection);
+export default React.memo(ProjectList);

@@ -63,9 +63,9 @@ const processes: Process[] = [
 
 const DevelopmentProcess = () => {
 	return (
-		<section id={Section.Development} className="py-16 md:py-20 relative">
+		<section id={Section.Workflow} className="py-16 md:py-20 relative">
 			<div className="container mx-auto px-4">
-				<h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center">Development Process</h2>
+				<h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center">Workflow</h2>
 
 				<div className="max-w-5xl mx-auto p-8">
 					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 px-2">

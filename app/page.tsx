@@ -2,11 +2,11 @@
 
 import React, { useState } from 'react';
 import ContactSection from './components/ContactSection';
-import DevelopmentProcess from './components/DevelopmentProcess';
 import HeaderSection from './components/HeaderSection';
 import HeroSection from './components/HeroSection';
-import ProjectShowcase from './components/ProjectShowcase';
+import ProjectSection from './components/ProjectSection';
 import SkillsSection from './components/SkillsSection';
+import WorkflowSection from './components/WorkflowSection';
 
 const EasterEggLayout = (props: { children: React.ReactNode[] }) => {
 	const [isUnlocked, setIsUnlocked] = useState(false);
@@ -25,8 +25,8 @@ export default function MobileDevPortfolio() {
 			<EasterEggLayout>
 				<HeroSection />
 				<SkillsSection />
-				<ProjectShowcase />
-				<DevelopmentProcess />
+				<ProjectSection />
+				<WorkflowSection />
 			</EasterEggLayout>
 		</main>
 	);
