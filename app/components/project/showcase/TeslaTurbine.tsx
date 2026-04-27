@@ -1,15 +1,15 @@
-'use-client';
-
+import { buildProject } from '@/app/features/project/factory';
 import Frederick from '@/public/profilePics/Frederick.jpg';
 import Fung from '@/public/profilePics/Fung.png';
 import Jerryl from '@/public/profilePics/Jerryl.jpg';
 import Nicholas from '@/public/profilePics/Nicholas.jpg';
 import Shawn from '@/public/profilePics/Shawn.jpg';
+import TeslaTurbineLogo from '@/public/projects/tesla turbine logo.jpg';
 import gdpVideo from '@/public/shared/videos/gdpVideo.mp4';
-import LayoutComponent from './layout_components/LayoutComponent';
-import ProfileComponent, { ProfileI } from './layout_components/ProfileComponent';
-import TextComponent from './layout_components/TextComponent';
-import VideoComponent from './layout_components/VideoComponent';
+import LayoutComponent from '../layouts/LayoutComponent';
+import ProfileComponent, { ProfileI } from '../layouts/ProfileComponent';
+import TextComponent from '../layouts/TextComponent';
+import VideoComponent from '../layouts/VideoComponent';
 
 const contributors: ProfileI[] = [
 	{
@@ -58,4 +58,16 @@ const TeslaTurbineLayout = () => {
 	);
 };
 
-export default TeslaTurbineLayout;
+const TeslaTurbine = buildProject(
+	'Tesla Turbine Simulation',
+	new Date(2020, 9, 1),
+	new Date(2021, 6, 1),
+	'https://github.com/kjc1998/Tesla-Turbine-Flow-Simulation',
+	TeslaTurbineLogo,
+	'done',
+	'100W pico-scaled Tesla Turbine for  £100',
+	['fluid dynamics', 'python', 'numpy', 'numerical simulation', 'CFD'],
+	<TeslaTurbineLayout />,
+);
+
+export default TeslaTurbine;

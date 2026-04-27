@@ -1,54 +1,18 @@
 'use client';
 
-import JenkinsLogo from '@/public/projects/jenkins.svg';
-import KaiJie from '@/public/projects/kai jie.jpg';
-import TeslaTurbine from '@/public/projects/tesla turbine logo.jpg';
 import { motion } from 'framer-motion';
 import { useMemo, useState } from 'react';
-import { buildProject } from '../../features/project/factory';
 import { filterProjects } from '../../features/project/search';
 import sortProject from '../../features/project/sort';
 import { Section, SortCategory } from '../../models/enums';
 import { ProjectI } from '../../models/project';
-import ProjectList from './project_list/ProjectList';
+import Collections from './collections/Collections';
+import Home from './showcase/Home';
+import Jenkins from './showcase/Jenkins';
+import TeslaTurbine from './showcase/TeslaTurbine';
 import Sort from './Sort';
-import TeslaTurbineLayout from './TeslaTurbineLayout';
 
-const projects: ProjectI[] = [
-	buildProject(
-		'Jenkins',
-		new Date(2025, 6, 1),
-		new Date(2025, 7, 1),
-		'https://kj1chow.zapto.org/jenkins/',
-		JenkinsLogo,
-		'done',
-		'A CI/CD pipeline to automate build, test, and deployment processes',
-		['Jenkins', 'CICD', 'nginx', 'docker'],
-		null,
-	),
-	buildProject(
-		'Home',
-		new Date(2025, 6, 1),
-		null,
-		'https://kj1chow.zapto.org/home/',
-		KaiJie,
-		'ongoing',
-		'Portfolio showcasing projects, skills and professional journey',
-		['nextjs', 'react', 'nginx', 'front-end'],
-		null,
-	),
-	buildProject(
-		'Tesla Turbine Simulation',
-		new Date(2020, 9, 1),
-		new Date(2021, 6, 1),
-		'https://github.com/kjc1998/Tesla-Turbine-Flow-Simulation',
-		TeslaTurbine,
-		'done',
-		'100W pico-scaled Tesla Turbine for  £100',
-		['fluid dynamics', 'python', 'numpy', 'numerical simulation', 'CFD'],
-		<TeslaTurbineLayout />,
-	),
-];
+const projects: ProjectI[] = [Jenkins, Home, TeslaTurbine];
 
 const ProjectShowcase = () => {
 	const [query, setQuery] = useState('');
@@ -87,7 +51,7 @@ const ProjectShowcase = () => {
 							<Sort sort={[sortBy, setSortBy]} asc={[isAsc, setIsAsc]} />
 						</div>
 					</div>
-					<ProjectList projects={filteredSorted} />
+					<Collections projects={filteredSorted} />
 				</div>
 			</div>
 		</section>
