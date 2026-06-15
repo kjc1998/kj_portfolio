@@ -1,6 +1,6 @@
 'use-client';
 
-import { SortCategory } from '@/app/models/enums';
+import { SortCategory } from '@/src/models/enums';
 import { ProjectI } from '../../models/project';
 
 const sortProject = (projects: ProjectI[], category: SortCategory, isAscending: boolean) => {

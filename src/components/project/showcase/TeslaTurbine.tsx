@@ -1,4 +1,3 @@
-import { buildProject } from '@/app/features/project/factory';
 import Frederick from '@/public/profilePics/Frederick.jpg';
 import Fung from '@/public/profilePics/Fung.png';
 import Jerryl from '@/public/profilePics/Jerryl.jpg';
@@ -6,6 +5,7 @@ import Nicholas from '@/public/profilePics/Nicholas.jpg';
 import Shawn from '@/public/profilePics/Shawn.jpg';
 import TeslaTurbineLogo from '@/public/projects/tesla turbine logo.jpg';
 import gdpVideo from '@/public/shared/videos/gdpVideo.mp4';
+import { buildProject } from '@/src/features/project/factory';
 import LayoutComponent from '../layouts/LayoutComponent';
 import ProfileComponent, { ProfileI } from '../layouts/ProfileComponent';
 import TextComponent from '../layouts/TextComponent';

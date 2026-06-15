@@ -1,5 +1,5 @@
-import { buildProject } from '@/app/features/project/factory';
 import JenkinsLogo from '@/public/projects/jenkins.svg';
+import { buildProject } from '@/src/features/project/factory';
 
 const Jenkins = buildProject(
 	'Jenkins',

@@ -1,6 +1,6 @@
-import { buildProject } from '@/app/features/project/factory';
-import sortProject from '@/app/features/project/sort';
-import { SortCategory } from '@/app/models/enums';
+import { buildProject } from '@/src/features/project/factory';
+import sortProject from '@/src/features/project/sort';
+import { SortCategory } from '@/src/models/enums';
 import { StaticImageData } from 'next/image';
 
 describe(`test sort projects functionality`, () => {

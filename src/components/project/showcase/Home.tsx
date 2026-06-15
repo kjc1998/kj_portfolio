@@ -1,5 +1,5 @@
-import { buildProject } from '@/app/features/project/factory';
 import KaiJie from '@/public/projects/kai jie.jpg';
+import { buildProject } from '@/src/features/project/factory';
 
 const Home = buildProject(
 	'Home',
