@@ -61,7 +61,7 @@ const ContactSection = (prop: { unlock: [boolean, (value: React.SetStateAction<b
 
 					{/* Location */}
 					<div className="flex items-center justify-center gap-2 text-gray-400">
-						<Link href="https://www.google.com/maps/search/+Cambridge,+Cambridgeshire,+England" className="blcok">
+						<Link href="https://www.google.com/maps/place/Edinburgh/" className="block">
 							<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path
 									strokeLinecap="round"
@@ -72,7 +72,7 @@ const ContactSection = (prop: { unlock: [boolean, (value: React.SetStateAction<b
 								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
 							</svg>
 						</Link>
-						<span>Cambridge, UK</span>
+						<span>Edinburgh, UK</span>
 					</div>
 
 					{/* Social Links */}

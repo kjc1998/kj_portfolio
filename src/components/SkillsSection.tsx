@@ -57,7 +57,7 @@ const SkillsSection = () => {
 									></div>
 								</div>
 								{/* Hover Card with Details */}
-								<div className="hidden lg:block absolute left-full top-0 ml-4 w-48 p-3 rounded-lg bg-gray-800/90 backdrop-blur-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-700/50">
+								<div className="hidden z-10 lg:block absolute left-full top-0 ml-4 w-48 p-3 rounded-lg bg-gray-800/90 backdrop-blur-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-700/50">
 									<div className="text-sm space-y-2">
 										<p className="font-medium">{skill.name}</p>
 										<div className="space-y-1 text-xs text-gray-400">
