@@ -13,6 +13,12 @@ spec:
   volumes:
   - name: docker-config
     secret:
+      # 
+      # kubectl create secret docker-registry docker-credentials \
+      #   --docker-username=[userid] \
+      #   --docker-password=[Docker Hub access token] \
+      #   --docker-email=[user email address] \
+      #   --namespace [jenkins namespace]
       secretName: docker-credentials
       items:
       - key: .dockerconfigjson
