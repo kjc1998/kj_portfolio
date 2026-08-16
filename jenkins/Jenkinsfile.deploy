@@ -10,7 +10,7 @@ pipeline {
     }
 
     environment {
-        IMAGE_NAME = "docker.io/kjchow/kj_portfolio"
+        IMAGE_NAME = 'docker.io/kjchow/kj_portfolio'
         DOCKERHUB_CRED = credentials('kj-dockerhub')
     }
 
@@ -51,12 +51,12 @@ pipeline {
         }
     }
 
-    // post {
-    //     always {
-    //         dir('docker_image') {
-    //             // Clean Image
-    //             sh "make clean TAG=${params.IMAGE_TAG}"
-    //         }
-    //     }
-    // }
+// post {
+//     always {
+//         dir('docker_image') {
+//             // Clean Image
+//             sh "make clean TAG=${params.IMAGE_TAG}"
+//         }
+//     }
+// }
 }

@@ -5,5 +5,6 @@ spec:
   - name: kaniko
     image: gcr.io/kaniko-project/executor:latest
     command:
-    - cat
-    tty: true
+    - sleep
+    args:
+    - 9999999
