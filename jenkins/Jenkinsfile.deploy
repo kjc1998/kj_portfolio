@@ -12,7 +12,6 @@ pipeline {
 
     environment {
         IMAGE_NAME = 'docker.io/kjchow/kj_portfolio'
-        DOCKERHUB_CRED = credentials('kj-dockerhub')
     }
 
     options { buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '10', daysToKeepStr: '', numToKeepStr: '10') }
