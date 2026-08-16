@@ -13,7 +13,7 @@ spec:
   volumes:
   - name: docker-config
     secret:
-      # 
+      # Add secret to cluster:
       # kubectl create secret docker-registry docker-credentials \
       #   --docker-username=[userid] \
       #   --docker-password=[Docker Hub access token] \
