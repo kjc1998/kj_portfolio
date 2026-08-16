@@ -18,27 +18,10 @@ pipeline {
     options { buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '10', daysToKeepStr: '', numToKeepStr: '10') }
 
     stages {
-        // stage('Build Docker Image') {
-        //     steps {
-        //         dir('docker_image') {
-        //             sh "make image TAG=${params.IMAGE_TAG}"
-        //         }
-        //     }
-        // }
-
-        // stage('Push Docker Image') {
-        //     steps {
-        //         dir('docker_image') {
-        //             // Prevent Interpolation of Sensitive Variables
-        //             sh 'make login DOCKERHUB_USERNAME=$DOCKERHUB_CRED_USR DOCKERHUB_PASSWORD=$DOCKERHUB_CRED_PSW'
-        //             sh "make push TAG=${params.IMAGE_TAG}"
-        //         }
-        //     }
-        // }
         stage('Build and Push Docker Image') {
             steps {
                 dir('docker_image') {
-                    sh '''#!/busybox/sh
+                    sh """#!/busybox/sh
 
                         /kaniko/executor \
                             --dockerfile ./Dockerfile \
@@ -46,18 +29,9 @@ pipeline {
                             --destination=${IMAGE_NAME}:${params.IMAGE_TAG}
                             --destination=${IMAGE_NAME}:latest
                             --cleanup
-                    '''
+                    """
                 }
             }
         }
     }
-
-// post {
-//     always {
-//         dir('docker_image') {
-//             // Clean Image
-//             sh "make clean TAG=${params.IMAGE_TAG}"
-//         }
-//     }
-// }
 }
