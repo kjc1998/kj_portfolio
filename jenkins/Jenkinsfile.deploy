@@ -7,7 +7,7 @@ pipeline {
     }
 
     parameters {
-        string(name: 'IMAGE_TAG', description: 'Portfolio Image Version to Deploy')
+        string(name: 'IMAGE_TAG', description: 'Portfolio Image Version to Deploy', defaultValue: '')
     }
 
     environment {
@@ -19,12 +19,7 @@ pipeline {
     stages {
         stage('Get Image Version') {
             steps {
-                params.IMAGE_TAG = sh(
-                    returnStdout: true, 
-                    script: """
-                        grep -m1 '"version":' package.json | cut -d '"' -f 4
-                    """
-                ).trim()
+                env.IMAGE_TAG = sh(returnStdout: true, script: """grep -m1 '"version":' package.json | cut -d '"' -f 4""").trim()
             }
         }
         // stage('Build and Push Docker Image') {
