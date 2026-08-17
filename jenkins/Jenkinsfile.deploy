@@ -17,20 +17,30 @@ pipeline {
     options { buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '10', daysToKeepStr: '', numToKeepStr: '10') }
 
     stages {
-        stage('Build and Push Docker Image') {
+        stage('Get Image Version') {
             steps {
-                dir('docker_image') {
-                    sh """#!/busybox/sh
-
-                        /kaniko/executor \
-                            --dockerfile ./Dockerfile \
-                            --context . \
-                            --destination=${IMAGE_NAME}:${params.IMAGE_TAG} \
-                            --destination=${IMAGE_NAME}:latest \
-                            --cleanup
+                env.IMAGE_TAG = sh(
+                    returnStdout: true, 
+                    script: """
+                        grep -m1 '"version":' package.json | cut -d '"' -f 4
                     """
-                }
+                ).trim()
             }
         }
+        // stage('Build and Push Docker Image') {
+        //     steps {
+        //         dir('docker_image') {
+        //             sh """#!/busybox/sh
+
+        //                 /kaniko/executor \
+        //                     --dockerfile ./Dockerfile \
+        //                     --context . \
+        //                     --destination=${IMAGE_NAME}:${params.IMAGE_TAG} \
+        //                     --destination=${IMAGE_NAME}:latest \
+        //                     --cleanup
+        //             """
+        //         }
+        //     }
+        // }
     }
 }
