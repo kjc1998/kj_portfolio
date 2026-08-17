@@ -19,7 +19,7 @@ pipeline {
     stages {
         stage('Get Image Version') {
             steps {
-                env.IMAGE_TAG = sh(
+                params.IMAGE_TAG = sh(
                     returnStdout: true, 
                     script: """
                         grep -m1 '"version":' package.json | cut -d '"' -f 4
