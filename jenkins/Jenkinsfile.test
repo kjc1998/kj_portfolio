@@ -34,7 +34,9 @@ pipeline {
         stage('Initiate Image Deployment') {
             steps {
                 script {
-                    echo env.BRANCH_NAME
+                    if (env.BRANCH_NAME == 'main') {
+                        echo "HELLOOO"
+                    }
                 }
             }
         }
