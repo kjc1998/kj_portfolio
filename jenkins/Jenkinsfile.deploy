@@ -19,7 +19,10 @@ pipeline {
     stages {
         stage('Get Image Version') {
             steps {
-                sh """grep -m1 '"version":' package.json | cut -d '"' -f 4"""
+                script {
+                    env.IMAGE_TAG = sh """grep -m1 '"version":' package.json | cut -d '"' -f 4"""
+                }
+                sh """echo ${env.IMAGE_TAG}"""
             }
         }
         // stage('Build and Push Docker Image') {
