@@ -6,12 +6,9 @@ pipeline {
         }
     }
 
-    parameters {
-        string(name: 'IMAGE_TAG', description: 'Portfolio Image Version to Deploy', defaultValue: '')
-    }
-
     environment {
         IMAGE_NAME = 'docker.io/kjchow/kj_portfolio'
+        IMAGE_TAG = '0.0.0'
     }
 
     options { buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '10', daysToKeepStr: '', numToKeepStr: '10') }
@@ -20,7 +17,7 @@ pipeline {
         stage('Get Image Version') {
             steps {
                 script {
-                    env.IMAGE_TAG = sh """grep -m1 '"version":' package.json | cut -d '"' -f 4"""
+                    env.IMAGE_TAG = sh(returnStdout: true, script: """grep -m1 '"version":' package.json | cut -d '"' -f 4""").trim()
                 }
                 sh """echo ${env.IMAGE_TAG}"""
             }
