@@ -32,8 +32,10 @@ pipeline {
             steps { sh 'npm test' }
         }
         stage('Initiate Image Deployment') {
-            script {
-                echo env.BRANCH_NAME
+            steps {
+                script {
+                    echo env.BRANCH_NAME
+                }
             }
         }
     }
