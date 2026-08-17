@@ -1,3 +1,5 @@
+def TARGET_BRANCHES = ['main']
+
 pipeline {
     agent {
         kubernetes {
@@ -15,10 +17,9 @@ pipeline {
         stage('Validate') {
             steps {
                 script {
-                    def targetBranches = ['main']
                     def target = env.CHANGE_TARGET
 
-                    if (target != null && !targetBranches.contains(target)) {
+                    if (target != null && !TARGET_BRANCHES.contains(target)) {
                         currentBuild.result = 'ABORTED'
                         error('Abort Build')
                     }
@@ -34,8 +35,8 @@ pipeline {
         stage('Initiate Image Deployment') {
             steps {
                 script {
-                    if (env.BRANCH_NAME == 'main') {
-                        build(job: 'homepage-deploy/main', wait: false)
+                    if (TARGET_BRANCHES.contains(env.BRANCH_NAME)) {
+                        build(job: "homepage-deploy/${env.BRANCH_NAME}", wait: false)
                     }
                 }
             }
