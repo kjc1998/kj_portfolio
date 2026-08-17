@@ -21,7 +21,7 @@ pipeline {
                         /kaniko/executor \
                             --dockerfile ./Dockerfile \
                             --context . \
-                            --destination=${IMAGE_NAME}:${params.IMAGE_TAG} \
+                            --destination=${IMAGE_NAME}:${env.IMAGE_TAG} \
                             --destination=${IMAGE_NAME}:latest \
                             --cleanup
                     """
