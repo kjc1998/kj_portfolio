@@ -22,7 +22,7 @@ const fields: Skill[] = [
 	{ name: 'TDD - Pytest, Jest', level: 95 },
 	{ name: 'DevOps', level: 75 },
 	{ name: 'CI/CD - Jenkins, Github Actions', level: 85 },
-	{ name: 'Kubernetes', level: 65 },
+	{ name: 'Kubernetes', level: 70 },
 ];
 
 const SkillsSection = () => {
