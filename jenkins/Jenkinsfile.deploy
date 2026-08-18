@@ -14,20 +14,20 @@ pipeline {
     options { buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '10', daysToKeepStr: '', numToKeepStr: '10') }
 
     stages {
-        // stage('Build and Push Docker Image') {
-        //     steps {
-        //         dir('docker_image') {
-        //             sh """
-        //                 /kaniko/executor \
-        //                     --dockerfile ./Dockerfile \
-        //                     --context . \
-        //                     --destination=${IMAGE_NAME}:${env.IMAGE_TAG} \
-        //                     --destination=${IMAGE_NAME}:latest \
-        //                     --cleanup
-        //             """
-        //         }
-        //     }
-        // }
+        stage('Build and Push Docker Image') {
+            steps {
+                dir('docker_image') {
+                    sh """
+                        /kaniko/executor \
+                            --dockerfile ./Dockerfile \
+                            --context . \
+                            --destination=${IMAGE_NAME}:${env.IMAGE_TAG} \
+                            --destination=${IMAGE_NAME}:latest \
+                            --cleanup
+                    """
+                }
+            }
+        }
 
         stage('Upgrade Homepage Version') {
             steps {
