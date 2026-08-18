@@ -10,6 +10,11 @@ spec:
     volumeMounts:
     - name: docker-config
       mountPath: /kaniko/.docker
+  - name: curl
+    image: docker.io/curlimages/curl
+    command:
+    - cat
+    tty: true
   volumes:
   - name: docker-config
     secret:

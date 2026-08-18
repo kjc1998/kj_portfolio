@@ -7,36 +7,58 @@ pipeline {
     }
 
     environment {
-        IMAGE_NAME = 'docker.io/kjchow/kj_portfolio'
+        DOCKER_CREDS = credentials('kj-dockerhub')
+        IMAGE_REGISTRY = 'docker.io'
+        IMAGE_NAME = 'kjchow/kj_portfolio'
         IMAGE_TAG = """${sh(returnStdout: true, script: "grep -m1 '\"version\":' package.json | cut -d '\"' -f 4").trim()}"""
     }
 
     options { buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '10', daysToKeepStr: '', numToKeepStr: '10') }
 
     stages {
-        stage('Build and Push Docker Image') {
+        stage('Check Image Exists') {
             steps {
-                dir('docker_image') {
-                    sh """
-                        /kaniko/executor \
-                            --dockerfile ./Dockerfile \
-                            --context . \
-                            --destination=${IMAGE_NAME}:${env.IMAGE_TAG} \
-                            --destination=${IMAGE_NAME}:latest \
-                            --cleanup
-                    """
+                container('curl') {
+                    script {
+                        def imageExists = sh(
+                            script: '''
+                                curl -fs \
+                                    -u "$DOCKER_CREDS_USR:$DOCKER_CREDS_PSW" \
+                                    "https://hub.docker.com/v2/repositories/$IMAGE_NAME/tags/$IMAGE_TAG"
+                            ''',
+                            returnStatus: true
+                        )
+                        if (!imageExists) {
+                            currentBuild.result = 'ABORTED'
+                            error("Abort Build - Image ${IMAGE_REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG} already existed")
+                        }
+                    }
                 }
             }
         }
+        // stage('Build and Push Docker Image') {
+        //     steps {
+        //         dir('docker_image') {
+        //             sh """
+        //                 /kaniko/executor \
+        //                     --dockerfile ./Dockerfile \
+        //                     --context . \
+        //                     --destination=${IMAGE_NAME}:${IMAGE_TAG} \
+        //                     --destination=${IMAGE_NAME}:latest \
+        //                     --cleanup
+        //             """
+        //         }
+        //     }
+        // }
 
-        stage('Upgrade Homepage Version') {
-            steps {
-                build(
-                    job: "server-upgrade/${env.BRANCH_NAME}",
-                    parameters: [string(name: "HOMEPAGE_VERSION", value: "${env.IMAGE_TAG}")],
-                    wait: false
-                )
-            }
-        }
+        // stage('Upgrade Homepage Version') {
+        //     steps {
+        //         build(
+        //             job: "server-upgrade/${env.BRANCH_NAME}",
+        //             parameters: [string(name: "HOMEPAGE_VERSION", value: "${env.IMAGE_TAG}")],
+        //             wait: false
+        //         )
+        //     }
+        // }
     }
 }
