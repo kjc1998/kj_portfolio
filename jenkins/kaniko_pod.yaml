@@ -12,10 +12,11 @@ spec:
       mountPath: /kaniko/.docker
   - name: curl
     image: docker.io/curlimages/curl
-    runAsUser: '1000'
     command:
     - cat
     tty: true
+    securityContext:
+      runAsUser: 1000
   volumes:
   - name: docker-config
     secret:
