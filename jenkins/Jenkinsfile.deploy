@@ -30,11 +30,13 @@ pipeline {
         // }
 
         stage('Upgrade Homepage Version') {
-            build(
-                job: "server-upgrade/${env.BRANCH_NAME}",
-                parameters: [string(name: "HOMEPAGE_VERSION", value: "${env.IMAGE_TAG}")],
-                wait: false
-            )
+            steps {
+                build(
+                    job: "server-upgrade/${env.BRANCH_NAME}",
+                    parameters: [string(name: "HOMEPAGE_VERSION", value: "${env.IMAGE_TAG}")],
+                    wait: false
+                )
+            }
         }
     }
 }
