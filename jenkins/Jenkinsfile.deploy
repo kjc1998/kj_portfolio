@@ -23,16 +23,15 @@ pipeline {
                         def imageExists = sh(
                             script: '''
                                 curl -fs \
-                                    -u $DOCKER_CREDS_USR:$DOCKER_CREDS_PSW \
-                                    https://hub.docker.com/v2/repositories/$IMAGE_NAME/tags/$IMAGE_TAG
+                                    -u "$DOCKER_CREDS_USR:$DOCKER_CREDS_PSW" \
+                                    "https://hub.docker.com/v2/repositories/$IMAGE_NAME/tags/$IMAGE_TAG"
                             ''',
                             returnStatus: true
                         )
-                        echo imageExists
-                        // if (!imageExists) {
-                        //     currentBuild.result = 'ABORTED'
-                        //     error("Abort Build - Image ${IMAGE_REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG} already existed")
-                        // }
+                        if (!imageExists) {
+                            currentBuild.result = 'ABORTED'
+                            error("Abort Build - Image ${IMAGE_REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG} already existed")
+                        }
                     }
                 }
             }
