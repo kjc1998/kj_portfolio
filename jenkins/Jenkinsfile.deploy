@@ -23,14 +23,16 @@ pipeline {
                     script {
                         def imageExists = sh(
                             script: '''
+                                DATA="{\\"username\\": \\"$DOCKER_CREDS_USR\\", \\"password\\": \\"$DOCKER_CREDS_PSW\\"}"
+                                TOKEN=$(curl -s -X POST https://hub.docker.com/v2/users/login/ -H 'Content-Type: application/json' -d "$DATA" | grep -o '"token":"[^"]*' | cut -d'"' -f4)
                                 curl -sf \
-                                    -H "Authorization: JWT $(curl -s -X POST https://hub.docker.com/v2/users/login/ -H 'Content-Type: application/json' -d "{\"username\": \"$DOCKER_CREDS_USR\", \"password\": \"$DOCKER_CREDS_PSW\"}" | grep -o '"token":"[^"]*' | cut -d'"' -f4)" \
+                                    -H "Authorization: JWT $TOKEN" \
                                     "https://hub.docker.com/v2/namespaces/$REGISTRY_USERNAME/repositories/$IMAGE_NAME/tags/$IMAGE_TAG"
                             ''',
                             returnStatus: true
                         ) == 0
                         echo "Image exists: ${imageExists}"
-                        if (!imageExists) {
+                        if (imageExists) {
                             currentBuild.result = 'ABORTED'
                             error("Abort Build - Image ${IMAGE_REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG} already existed")
                         }
