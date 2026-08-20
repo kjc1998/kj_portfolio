@@ -28,8 +28,8 @@ pipeline {
                                     "https://hub.docker.com/v2/namespaces/$REGISTRY_USERNAME/repositories/$IMAGE_NAME/tags/$IMAGE_TAG"
                             ''',
                             returnStatus: true
-                        )
-                        echo imageExists
+                        ) == 0
+                        echo "Image exists: ${imageExists}"
                         if (!imageExists) {
                             currentBuild.result = 'ABORTED'
                             error("Abort Build - Image ${IMAGE_REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG} already existed")
