@@ -24,9 +24,8 @@ pipeline {
                         def imageExists = sh(
                             script: '''
                                 DATA="{\\"username\\": \\"$DOCKER_CREDS_USR\\", \\"password\\": \\"$DOCKER_CREDS_PSW\\"}"
-                                TOKEN=$(curl -s -X POST https://hub.docker.com/v2/users/login/ -H 'Content-Type: application/json' -d "$DATA" | grep -o '"token":"[^"]*' | cut -d'"' -f4)
                                 curl -sf \
-                                    -H "Authorization: JWT $TOKEN" \
+                                    -H "Authorization: JWT $(curl -s -X POST https://hub.docker.com/v2/users/login/ -H 'Content-Type: application/json' -d "$DATA" | grep -o '"token":"[^"]*' | cut -d'"' -f4)" \
                                     "https://hub.docker.com/v2/namespaces/$REGISTRY_USERNAME/repositories/$IMAGE_NAME/tags/$IMAGE_TAG"
                             ''',
                             returnStatus: true
