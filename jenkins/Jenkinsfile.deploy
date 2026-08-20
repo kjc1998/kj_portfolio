@@ -23,6 +23,7 @@ pipeline {
                     script {
                         def imageExists = sh(
                             script: '''
+                                set +x
                                 DATA="{\\"username\\": \\"$DOCKER_CREDS_USR\\", \\"password\\": \\"$DOCKER_CREDS_PSW\\"}"
                                 TOKEN=$(curl -s -X POST https://hub.docker.com/v2/users/login/ -H 'Content-Type: application/json' -d "$DATA" | grep -o '"token":"[^"]*' | cut -d'"' -f4)
                                 curl -sf \
@@ -31,7 +32,6 @@ pipeline {
                             ''',
                             returnStatus: true
                         ) == 0
-                        echo "${env.TOKEN}"
                         if (imageExists) {
                             currentBuild.result = 'ABORTED'
                             error("Abort Build - Image ${IMAGE_REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG} already existed")
