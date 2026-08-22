@@ -9,7 +9,8 @@ pipeline {
     environment {
         DOCKER_CREDS = credentials('kj-dockerhub')
         IMAGE_REGISTRY = 'docker.io'
-        IMAGE_NAME = 'kjchow/kj_portfolio'
+        REGISTRY_USERNAME = 'kjchow'
+        IMAGE_NAME = 'kj_portfolio'
         IMAGE_TAG = """${sh(returnStdout: true, script: "grep -m1 '\"version\":' package.json | cut -d '\"' -f 4").trim()}"""
     }
 
@@ -22,15 +23,18 @@ pipeline {
                     script {
                         def imageExists = sh(
                             script: '''
-                                curl -fs \
-                                    -u "$DOCKER_CREDS_USR:$DOCKER_CREDS_PSW" \
-                                    "https://hub.docker.com/v2/repositories/$IMAGE_NAME/tags/$IMAGE_TAG"
+                                set +x
+                                DATA="{\\"username\\": \\"$DOCKER_CREDS_USR\\", \\"password\\": \\"$DOCKER_CREDS_PSW\\"}"
+                                TOKEN=$(curl -s -X POST https://hub.docker.com/v2/users/login/ -H 'Content-Type: application/json' -d "$DATA" | grep -o '"token":"[^"]*' | cut -d'"' -f4)
+                                curl -sf \
+                                    -H "Authorization: JWT $TOKEN" \
+                                    "https://hub.docker.com/v2/namespaces/$REGISTRY_USERNAME/repositories/$IMAGE_NAME/tags/$IMAGE_TAG" > /dev/null 2>&1
                             ''',
                             returnStatus: true
-                        )
-                        if (!imageExists) {
+                        ) == 0
+                        if (imageExists) {
                             currentBuild.result = 'ABORTED'
-                            error("Abort Build - Image ${IMAGE_REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG} already existed")
+                            error("Abort Build - Image ${IMAGE_REGISTRY}/${REGISTRY_USERNAME}/${IMAGE_NAME}:${IMAGE_TAG} already existed")
                         }
                     }
                 }
@@ -43,8 +47,8 @@ pipeline {
                         /kaniko/executor \
                             --dockerfile ./Dockerfile \
                             --context . \
-                            --destination=${IMAGE_NAME}:${IMAGE_TAG} \
-                            --destination=${IMAGE_NAME}:latest \
+                            --destination=${IMAGE_REGISTRY}/${REGISTRY_USERNAME}/${IMAGE_NAME}:${IMAGE_TAG} \
+                            --destination=${IMAGE_REGISTRY}/${REGISTRY_USERNAME}/${IMAGE_NAME}:latest \
                             --cleanup
                     """
                 }
