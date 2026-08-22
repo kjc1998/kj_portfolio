@@ -9,7 +9,7 @@ const Jenkins = buildProject(
 	JenkinsLogo,
 	'done',
 	'A CI/CD pipeline to automate build, test, and deployment processes',
-	['Jenkins', 'CICD', 'nginx', 'docker'],
+	['jenkins', 'nginx', 'docker'],
 	null,
 );
 
