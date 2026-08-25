@@ -7,6 +7,7 @@ import HeroSection from '../components/HeroSection';
 import ProjectSection from '../components/project/ProjectSection';
 import SkillsSection from '../components/SkillsSection';
 import WorkflowSection from '../components/WorkflowSection';
+import ParticlesWrapper from '../components/wrappers/ParticlesWrapper';
 
 const EasterEggLayout = (props: { children: React.ReactNode[] }) => {
 	const [isUnlocked, setIsUnlocked] = useState(false);
@@ -21,13 +22,15 @@ const EasterEggLayout = (props: { children: React.ReactNode[] }) => {
 
 export default function MobileDevPortfolio() {
 	return (
-		<main className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white overflow-x-clip">
-			<EasterEggLayout>
-				<HeroSection />
-				<SkillsSection />
-				<ProjectSection />
-				<WorkflowSection />
-			</EasterEggLayout>
-		</main>
+		<ParticlesWrapper>
+			<main className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white overflow-x-clip">
+				<EasterEggLayout>
+					<HeroSection />
+					<SkillsSection />
+					<ProjectSection />
+					<WorkflowSection />
+				</EasterEggLayout>
+			</main>
+		</ParticlesWrapper>
 	);
 }

@@ -1,21 +1,10 @@
 'use client';
+
 import type { ISourceOptions } from '@tsparticles/engine';
-import Particles, { initParticlesEngine } from '@tsparticles/react';
-import { loadSlim } from '@tsparticles/slim';
-import { useEffect, useState } from 'react';
+import Particles from '@tsparticles/react';
 import { Section } from '../models/enums';
 
 const HeroBackground = () => {
-	const [init, setInit] = useState(false);
-
-	useEffect(() => {
-		initParticlesEngine(async (engine) => {
-			await loadSlim(engine);
-		}).then(() => {
-			setInit(true);
-		});
-	}, []);
-
 	const options: ISourceOptions = {
 		fpsLimit: 120,
 		interactivity: {
@@ -91,19 +80,15 @@ const HeroBackground = () => {
 		],
 	};
 
-	return init ? (
-		<div
-			className="absolute inset-0"
-			style={{
-				maskImage: 'radial-gradient(ellipse at center, transparent 30%, black 60%, transparent 90%)',
-				WebkitMaskImage: 'radial-gradient(ellipse at center, transparent 30%, black 60%, transparent 90%)',
-			}}
-		>
-			<Particles className="h-full" options={options} />
-		</div>
-	) : (
-		<></>
-	);
+	return <div
+				className="absolute inset-0"
+				style={{
+					maskImage: 'radial-gradient(ellipse at center, transparent 30%, black 60%, transparent 90%)',
+					WebkitMaskImage: 'radial-gradient(ellipse at center, transparent 30%, black 60%, transparent 90%)',
+				}}
+			>
+				<Particles className="h-full" options={options} />
+			</div>
 };
 
 const HeroSection = () => {

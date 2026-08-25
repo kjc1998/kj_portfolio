@@ -35,7 +35,6 @@ const filterProjects = (projects: ProjectI[], search: string): [ProjectI, Projec
 	};
 
 	const result = projects.map((p): [ProjectI, ProjectHighlightI] => [p, projectSearch(p)]);
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	return search === '' ? result : result.filter(([_, s]) => hasSearchTerm(s));
 };
 
