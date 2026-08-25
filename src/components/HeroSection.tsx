@@ -80,15 +80,17 @@ const HeroBackground = () => {
 		],
 	};
 
-	return <div
-				className="absolute inset-0"
-				style={{
-					maskImage: 'radial-gradient(ellipse at center, transparent 30%, black 60%, transparent 90%)',
-					WebkitMaskImage: 'radial-gradient(ellipse at center, transparent 30%, black 60%, transparent 90%)',
-				}}
-			>
-				<Particles className="h-full" options={options} />
-			</div>
+	return (
+		<div
+			className="absolute inset-0"
+			style={{
+				maskImage: 'radial-gradient(ellipse at center, transparent 30%, black 60%, transparent 90%)',
+				WebkitMaskImage: 'radial-gradient(ellipse at center, transparent 30%, black 60%, transparent 90%)',
+			}}
+		>
+			<Particles className="h-full" options={options} />
+		</div>
+	);
 };
 
 const HeroSection = () => {
