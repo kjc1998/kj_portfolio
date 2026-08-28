@@ -1,9 +1,10 @@
+import React from 'react';
 import LayoutComponent from './LayoutComponent';
 
-const TextComponent = (prop: { text: string }) => {
+const TextComponent = (prop: { content: React.ReactNode }) => {
 	return (
 		<LayoutComponent>
-			<p className="text-justify">{prop.text}</p>
+			<p className="text-justify">{prop.content}</p>
 		</LayoutComponent>
 	);
 };

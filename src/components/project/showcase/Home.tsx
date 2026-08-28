@@ -3,12 +3,12 @@ import { buildProject } from '@/src/features/project/factory';
 
 const Home = buildProject(
 	'Home',
-	new Date(2025, 6, 1),
+	new Date(2025, 7, 1),
 	null,
 	'https://kj1chow.zapto.org/home/',
 	KaiJie,
 	'ongoing',
-	'Portfolio showcasing projects, skills and professional journey',
+	'Portfolio showcasing skills and professional journey',
 	['nextjs', 'react', 'nginx', 'front-end'],
 	null,
 );

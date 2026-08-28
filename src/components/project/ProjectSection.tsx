@@ -9,11 +9,10 @@ import { ProjectI } from '../../models/project';
 import Collections from './collections/Collections';
 import AppHub from './showcase/AppHub';
 import Home from './showcase/Home';
-import Jenkins from './showcase/Jenkins';
 import TeslaTurbine from './showcase/TeslaTurbine';
 import Sort from './Sort';
 
-const projects: ProjectI[] = [Jenkins, Home, TeslaTurbine, AppHub];
+const projects: ProjectI[] = [Home, TeslaTurbine, AppHub];
 
 const ProjectShowcase = () => {
 	const [query, setQuery] = useState('');

@@ -1,4 +1,5 @@
 import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
 
 export interface ProfileI {
 	name: string;
@@ -8,7 +9,7 @@ export interface ProfileI {
 
 const ProfileComponent = (props: ProfileI) => {
 	return (
-		<a
+		<Link
 			href={props.pageLink}
 			target="_blank"
 			rel="noopener noreferrer"
@@ -16,7 +17,7 @@ const ProfileComponent = (props: ProfileI) => {
 		>
 			<Image src={props.image} width={35} height={35} alt="Contributor" className="rounded-full object-cover" />
 			<span className="text-sm whitespace-nowrap">{props.name}</span>
-		</a>
+		</Link>
 	);
 };
 
