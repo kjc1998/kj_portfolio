@@ -45,18 +45,18 @@
 }
 
 @keyframes draw-arrow-timed {
-  0% {
-    stroke-dashoffset: 150;
-    opacity: 0;
-  }
-  /* Wait at 0% opacity until the 1s delay is over */
-  1% {
-    opacity: 1;
-  }
-  100% {
-    stroke-dashoffset: 0;
-    opacity: 1;
-  }
+	0% {
+		stroke-dashoffset: 150;
+		opacity: 0;
+	}
+	/* Wait at 0% opacity until the 1s delay is over */
+	1% {
+		opacity: 1;
+	}
+	100% {
+		stroke-dashoffset: 0;
+		opacity: 1;
+	}
 }
 body {
 	background-color: #000;
@@ -74,9 +74,9 @@ body {
 }
 
 .draw-path {
-  stroke-dasharray: 150;
-  stroke-dashoffset: 150;
-  /* Animation duration is 1s, but it starts after a 1s delay */
-  animation: draw-arrow-timed 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  animation-delay: 0.2s; 
+	stroke-dasharray: 150;
+	stroke-dashoffset: 150;
+	/* Animation duration is 1s, but it starts after a 1s delay */
+	animation: draw-arrow-timed 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+	animation-delay: 0.2s;
 }
