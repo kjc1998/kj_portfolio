@@ -75,7 +75,7 @@ const ProjectInfo = (prop: { project: ProjectI; highlight: ProjectHighlightI }) 
 			</p>
 
 			{/* Tags */}
-			<div className="h-24 mb-4 overflow-y-auto scrollbar-hide">
+			<div className="h-32 sm:h-24 mb-4 overflow-y-auto scrollbar-hide">
 				<div className="h-full flex flex-wrap content-start justify-center sm:justify-start gap-2">
 					{project.tags.map((tag, i) => (
 						<span
@@ -94,7 +94,7 @@ const ProjectInfo = (prop: { project: ProjectI; highlight: ProjectHighlightI }) 
 const Project = (prop: { project: ProjectI; highlight: ProjectHighlightI }) => {
 	return (
 		<div className="group bg-gradient-to-b from-gray-800/50 to-gray-900/50 rounded-xl sm:rounded-2xl p-1">
-			<div className="h-60 bg-gradient-to-b from-gray-900 to-gray-800 rounded-xl sm:rounded-2xl overflow-hidden p-4 sm:p-6 relative">
+			<div className="h-96 sm:h-64 bg-gradient-to-b from-gray-900 to-gray-800 rounded-xl sm:rounded-2xl overflow-hidden p-4 sm:p-6 relative">
 				<div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6">
 					<ProjectIcon project={prop.project} />
 					<ProjectInfo project={prop.project} highlight={prop.highlight} />
