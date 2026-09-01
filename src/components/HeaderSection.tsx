@@ -49,7 +49,7 @@ const HeaderSection = (prop: { isUnlocked: boolean }) => {
 					</Link>
 				))}
 				{prop.isUnlocked ? (
-					<Link
+					<a
 						ref={buttonRef}
 						key={sections.length}
 						href={Resume}
@@ -58,7 +58,7 @@ const HeaderSection = (prop: { isUnlocked: boolean }) => {
 					>
 						<Image src={ResumeIcon} alt="section icon" className="mx-1 block md:hidden rounded-lg" width={30} />
 						<p className="mx-4 hidden md:block text-lg hover:text-gray-500">Resume</p>
-					</Link>
+					</a>
 				) : (
 					<></>
 				)}
